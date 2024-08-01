@@ -6,6 +6,7 @@ const welcomeText = `Welcome! I'm Jelly, How can I assist you today?`;
 const static_questions_container = document.querySelector(".static-questions");
 const responseSection = document.querySelector("section");
 const session_id = Math.ceil(Math.random() * 10000).toString();
+const api = ""
 let response = [];
 const staticQuestions = [
   "What services does Jellyfish Technologies provide?",
@@ -145,6 +146,7 @@ async function sendQuery(e) {
     }),
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${api}`,
     },
   });
   if (res.status !== 200) {
