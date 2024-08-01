@@ -2,11 +2,11 @@ const bot_container = document.querySelector(".bot-container");
 const bot_button = document.querySelector(".bot-button");
 const initialMessage = document.querySelector(".initial-message");
 const queryInput = document.querySelector("#query");
+const apiKeyInput = document.querySelector("#api-key"); 
 const welcomeText = `Welcome! I'm Jelly, How can I assist you today?`;
 const static_questions_container = document.querySelector(".static-questions");
 const responseSection = document.querySelector("section");
 const session_id = Math.ceil(Math.random() * 10000).toString();
-const api = ""
 let response = [];
 const staticQuestions = [
   "What services does Jellyfish Technologies provide?",
@@ -136,7 +136,7 @@ async function sendQuery(e) {
   createResponseElements(query, "query");
 
   loadingResponseAnimation();
-
+  const apiKey = apiKeyInput.value;
   const res = await fetch(`http://127.0.0.1:8000/query`, {
     method: "POST",
     body: JSON.stringify({
