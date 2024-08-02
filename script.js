@@ -142,7 +142,7 @@ async function sendQuery(e) {
     }),
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${api}`,
+      Authorization: `Bearer ${apiKey}`,
     },
   });
   if (res.status !== 200) {
