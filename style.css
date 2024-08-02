@@ -65,6 +65,8 @@ header {
   margin: 1rem;
   width: 3rem;
   height: 3rem;
+  background: white;
+  border-radius: 100%;
 }
 
 .company-name {
@@ -90,11 +92,6 @@ img {
 
 img {
   object-fit: contain;
-}
-
-.bot-avatar{
-  height: 2.2rem;
-  width: 2.2rem;
 }
 
 button {
@@ -219,6 +216,8 @@ section {
 
 footer {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -229,6 +228,15 @@ footer {
   height: 90px;
 }
 
+footer div {
+  color: rgb(161, 161, 161);
+  font-size: 14px;
+}
+
+footer div span {
+  font-size: 18px;
+}
+
 form {
   display: flex;
   align-items: center;
@@ -236,7 +244,7 @@ form {
 }
 
 form input {
-  padding: 1rem;
+  padding: 0.5rem;
   flex: 1 1 0%;
   outline-style: none;
   border: none;
