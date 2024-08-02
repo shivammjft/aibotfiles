@@ -239,6 +239,15 @@ footer {
   font-size: 18px;
 }
 
+footer div {
+  color: rgb(161, 161, 161);
+  font-size: 14px;
+}
+
+footer div span {
+  font-size: 18px;
+}
+
 form {
   display: flex;
   align-items: center;

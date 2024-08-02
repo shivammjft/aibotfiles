@@ -126,7 +126,6 @@ function createResponseElements(text, type, link) {
 
 async function sendQuery(e) {
   e.preventDefault();
-  console.log('first')
   queryInput.setAttribute('disabled', true);
   const query = queryInput.value;
   queryInput.value = '';
