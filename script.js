@@ -133,7 +133,7 @@ async function sendQuery(e) {
 
   loadingResponseAnimation();
   const apiKey = apiKeyInput.value;
-  const res = await fetch(`http://127.0.0.1:8000/query`, {
+  const res = await fetch(`http://64.227.160.209/api/query`, {
     method: 'POST',
     body: JSON.stringify({
       query,
