@@ -71,17 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
     botContainer.appendChild(section);
 
 
-
-function getQueryParam(param) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(param);
-    }
-
-    // Extract the API key from the URL parameters
-    const scriptElement = document.querySelector('script[src*="example.com/script.js"]');
-    const scriptSrc = scriptElement ? scriptElement.src : '';
-    const url = new URL(scriptSrc, window.location.href);
-    const apiKeyFromCdnUrl = url.searchParams.get('apiKey');
+    let ap = document.getElementById("ai-jellyfishbot");
+    const apiKeyFromScriptTagId = ap.innerText;
 
   
   
@@ -100,7 +91,7 @@ function getQueryParam(param) {
     const apiKey = document.createElement('input');
     apiKey.type = 'hidden';
     apiKey.id = 'api-key';
-    apiKey.value = apiKeyFromCdnUrl;
+    apiKey.value = apiKeyFromScriptTagId;
     const sendBtn = document.createElement('button');
     sendBtn.type = 'submit';
     sendBtn.title = 'Send message';
