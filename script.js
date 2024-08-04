@@ -1,6 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed'); // Debugging statement
 
+    // Extracting information for initialization
+    let ap = document.getElementById("ai-jellyfishbot");
+    const apiDataForBot = ap.innerText.split(",");
+    const apiKeyFromScriptTagId = apiDataForBot[0];
+    const CompanyName = apiDataForBot[1];
+    const CompanyBotName = apiDataForBot[2]
+
+    
     // Create the container div
     const container = document.createElement('div');
     container.className = 'container';
@@ -19,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     logoImg.className = 'logo';
     const companyName = document.createElement('h1');
     companyName.className = 'company-name';
-    companyName.textContent = 'Jellyfish Technologies';
+    companyName.textContent = CompanyName;
     titleBar.appendChild(logoImg);
     titleBar.appendChild(companyName);
 
@@ -61,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     greetingImg.src = 'https://aibotfiles.vercel.app/bot.png';
     const initialMessage = document.createElement('span');
     initialMessage.className = 'initial-message';
-    initialMessage.textContent = "Welcome! I'm Jelly, How can I assist you today?";
+    initialMessage.textContent = `Welcome! I'm ${CompanyBotName}, How can I assist you today?`;
     initialGreetings.appendChild(greetingImg);
     initialGreetings.appendChild(initialMessage);
     const staticQuestions = document.createElement('div');
@@ -69,13 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
     section.appendChild(initialGreetings);
     section.appendChild(staticQuestions);
     botContainer.appendChild(section);
-
-
-    let ap = document.getElementById("ai-jellyfishbot");
-    const apiKeyFromScriptTagId = ap.innerText;
-
-  
-  
 
   
     // Add horizontal rule and footer
