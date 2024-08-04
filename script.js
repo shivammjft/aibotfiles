@@ -1,6 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed'); // Debugging statement
 
+    // Create a new <link> element to load  the css
+    var link = document.createElement('link');
+    // Set the attributes for the <link> element
+    link.rel = 'stylesheet';
+    link.href = "https://aibotfiles.vercel.app/style.css";
+
+    // Append the <link> element to the <head>
+    document.head.appendChild(link);
+    
     // Extracting information for initialization
     let ap = document.getElementById("ai-jellyfishbot");
     const apiDataForBot = ap.innerText.split(",");
