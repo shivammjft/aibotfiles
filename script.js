@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM fully loaded and parsed'); // Debugging statement
+    console.log('DOM fully loaded and parsed');
 
     // Create a new <link> element to load  the css
     var link = document.createElement('link');
