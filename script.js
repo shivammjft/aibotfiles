@@ -13,9 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
   let ap = document.getElementById("ai-jellyfishbot");
   const apiDataForBot = ap.innerText.split(",");
   const apiKeyFromScriptTagId = apiDataForBot[0];
-  const CompanyName = apiDataForBot[1];
-  const CompanyBotName = apiDataForBot[2];
-
+  const chatbotKey = apiDataForBot[1]
+  const CompanyName = apiDataForBot[2];
+  const CompanyBotName = apiDataForBot[3];
+  
   // Create the container div
   const container = document.createElement("div");
   container.className = "container";
@@ -284,6 +285,7 @@ function initializeBot() {
         query,
         session_id: sessionId,
         context: response,
+        chatbot_id:chatbotKey, 
       }),
       headers: {
         "Content-Type": "application/json",
