@@ -1,3 +1,4 @@
+let chatbotKey;
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM fully loaded and parsed");
   // Create a new <link> element to load  the css
@@ -13,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let ap = document.getElementById("ai-jellyfishbot");
   const apiDataForBot = ap.innerText.split(",");
   const apiKeyFromScriptTagId = apiDataForBot[0];
-  var chatbotKey = apiDataForBot[1]
+  chatbotKey = apiDataForBot[1]
   const CompanyName = apiDataForBot[2];
   const CompanyBotName = apiDataForBot[3];
   
