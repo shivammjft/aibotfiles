@@ -205,7 +205,8 @@ function initializeBot() {
   function convertToAnchorTags(text) {
     const urlPattern = /(https?:\/\/[^\s]+)/g;
     return text.replace(urlPattern, function (url) {
-      return `<a href="${url}" target="_blank" class="response-link">click here</a>`
+      const cleanUrl = url.replace(/[.,;!]+$/, '');
+      return `<a href="${cleanUrl}" target="_blank" class="response-link">click here</a>`
     });
   }
 
