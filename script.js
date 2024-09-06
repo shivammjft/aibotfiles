@@ -203,12 +203,9 @@ function initializeBot() {
   }
 
   function convertToAnchorTags(text) {
-    //const urlPattern = /(https?:\/\/[^\s]+)/g;
-   const urlPattern = /(https?:\/\/[^\s<>"']+)(?=[^\w\s<>"'.,;'"-]|$)/g;
+    const urlPattern = /(https?:\/\/[^\s]+)/g;
     return text.replace(urlPattern, function (url) {
-      const punctuationPattern = /([.,;'"!?])$/;
-        const cleanUrl = url.replace(punctuationPattern, '');
-      return `<a href="${cleanUrl}" target="_blank" class="response-link">click here</a>`
+      return `<a href="${url}" target="_blank" class="response-link">click here</a>`
     });
   }
 
