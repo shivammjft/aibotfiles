@@ -204,12 +204,11 @@ function initializeBot() {
 
   function convertToAnchorTags(text) {
     //const urlPattern = /(https?:\/\/[^\s]+)/g;
-    const urlPattern = /(https?:\/\/[^\s<>"']+)(?![\w.,;'"-])/g;
+   const urlPattern = /(https?:\/\/[^\s<>"']+)(?=[^\w\s<>"'.,;'"-]|$)/g;
     return text.replace(urlPattern, function (url) {
-      const trailingChar = text.match(/([^\w\s<>"'.,;'"-])$/);
-      //return `<a href="${url}" target="_blank" class="response-link">click here</a>`
-       const anchorTag =`<a href="${url}" target="_blank" class="response-link">click here</a>`;
-       return trailingChar ? anchorTag + trailingChar[0] : anchorTag; 
+      const punctuationPattern = /([.,;'"!?])$/;
+        const cleanUrl = url.replace(punctuationPattern, '');
+      return `<a href="${cleanUrl}" target="_blank" class="response-link">click here</a>`
     });
   }
 
