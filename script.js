@@ -206,7 +206,10 @@ function initializeBot() {
     //const urlPattern = /(https?:\/\/[^\s]+)/g;
     const urlPattern = /(https?:\/\/[^\s<>"']+)(?![\w.,;'"-])/g;
     return text.replace(urlPattern, function (url) {
-      return `<a href="${url}" target="_blank" class="response-link">click here</a>`;
+      const trailingChar = text.match(/([^\w\s<>"'.,;'"-])$/);
+      //return `<a href="${url}" target="_blank" class="response-link">click here</a>`
+       const anchorTag =`<a href="${url}" target="_blank" class="response-link">click here</a>`;
+       return trailingChar ? anchorTag + trailingChar[0] : anchorTag; 
     });
   }
 
