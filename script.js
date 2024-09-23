@@ -281,7 +281,7 @@ function initializeBot() {
     loadingResponseAnimation();
     const apiKey = apiKeyInput.value;
     const bearerToken = "Bearer " + apiKey.trim();
-    const res = await fetch("http://64.227.160.209/query", {
+    const res = await fetch("https://chatbot.teamjft.com/query", {
       method: "POST",
       body: JSON.stringify({
         query,
