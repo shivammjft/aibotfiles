@@ -1,4 +1,5 @@
 let chatbotKey;
+let chatHistory = [];
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM fully loaded and parsed");
   // Create a new <link> element to load  the css
@@ -181,7 +182,12 @@ function initializeBot() {
     botButton.removeAttribute("style");
   });
 
+  window.addEventListener("beforeunload", () => {
+  sendEmail(chatHistory);
+});
+  
   document.querySelector("#clear").addEventListener("click", () => {
+    sendEmail(chatHistory);
     clearAllMessages();
   });
 
@@ -199,6 +205,7 @@ function initializeBot() {
       responseSection.removeChild(staticQuestionsContainer.nextSibling);
     }
     response = [];
+    chatHistory = [];
     queryInput.focus();
   }
 
@@ -246,6 +253,7 @@ function initializeBot() {
       div.appendChild(userAvatar.cloneNode());
       responseSection.appendChild(div);
       responseSection.scrollTop = responseSection.scrollHeight;
+      chatHistory.push(text);
     } else if (type === "data") {
       div.classList.add("response-message-container");
       span.classList.add("response-message");
@@ -253,6 +261,7 @@ function initializeBot() {
       div.appendChild(span);
       responseSection.appendChild(div);
       textTypingEffect(span, text);
+      chatHistory.push(text);
       if (link) {
         const a = document.createElement("a");
         a.setAttribute("target", "_blank");
@@ -316,6 +325,28 @@ function initializeBot() {
     response.push(data);
     createResponseElements(data, "data");
   }
+
+  
+  async function sendEmail(chatHistory) {
+  try {
+    const response = await fetch('/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ chatHistory: chatHistory.join('\n') }),
+    });
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error('Error sending email:', error);
+  }
+}
 
   function loadingResponseAnimation() {
     const div = document.createElement("div");
