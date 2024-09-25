@@ -1,22 +1,23 @@
 let chatbotKey;
-let chatHistory = []; // Store chat history
-
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM fully loaded and parsed");
-  // Create a new <link> element to load the CSS
+  // Create a new <link> element to load  the css
   var link = document.createElement("link");
+  // Set the attributes for the <link> element
   link.rel = "stylesheet";
   link.href = "https://aibotfiles.vercel.app/style.css";
+
+  // Append the <link> element to the <head>
   document.head.appendChild(link);
 
   // Extracting information for initialization
   let ap = document.getElementById("ai-jellyfishbot");
   const apiDataForBot = ap.innerText.split(",");
   const apiKeyFromScriptTagId = apiDataForBot[0];
-  chatbotKey = apiDataForBot[1];
+  chatbotKey = apiDataForBot[1]
   const CompanyName = apiDataForBot[2];
   const CompanyBotName = apiDataForBot[3];
-
+  
   // Create the container div
   const container = document.createElement("div");
   container.className = "container";
@@ -182,7 +183,6 @@ function initializeBot() {
 
   document.querySelector("#clear").addEventListener("click", () => {
     clearAllMessages();
-    sendEmail(chatHistory); // Send email on clear
   });
 
   botButton.addEventListener("click", () => {
@@ -199,7 +199,6 @@ function initializeBot() {
       responseSection.removeChild(staticQuestionsContainer.nextSibling);
     }
     response = [];
-    chatHistory = []; // Clear chat history
     queryInput.focus();
   }
 
@@ -207,7 +206,7 @@ function initializeBot() {
     const urlPattern = /(https?:\/\/[^\s]+)/g;
     return text.replace(urlPattern, function (url) {
       const cleanUrl = url.replace(/[.,;!]+$/, '');
-      return `<a href="${cleanUrl}" target="_blank" class="response-link">click here</a>`;
+      return `<a href="${cleanUrl}" target="_blank" class="response-link">click here</a>`
     });
   }
 
@@ -247,7 +246,6 @@ function initializeBot() {
       div.appendChild(userAvatar.cloneNode());
       responseSection.appendChild(div);
       responseSection.scrollTop = responseSection.scrollHeight;
-      chatHistory.push(text); // Add query to chat history
     } else if (type === "data") {
       div.classList.add("response-message-container");
       span.classList.add("response-message");
@@ -255,7 +253,6 @@ function initializeBot() {
       div.appendChild(span);
       responseSection.appendChild(div);
       textTypingEffect(span, text);
-      chatHistory.push(text); // Add response to chat history
       if (link) {
         const a = document.createElement("a");
         a.setAttribute("target", "_blank");
@@ -290,7 +287,7 @@ function initializeBot() {
         query,
         session_id: sessionId,
         context: response,
-        chatbot_id: chatbotKey,
+        chatbot_id:chatbotKey, 
       }),
       headers: {
         "Content-Type": "application/json",
@@ -335,29 +332,5 @@ function initializeBot() {
 
   function stopLoadingResponseAnimation() {
     responseSection.removeChild(responseSection.lastChild);
-  }
-
-  window.addEventListener("beforeunload", () => {
-    sendEmail(chatHistory); // Send email on unload
-  });
-}
-
-// Function to send email via FastAPI
-async function sendEmail(chatHistory) {
-  const chatContent = chatHistory.join('\n'); // Join chat history into a single string
-  try {
-    const response = await fetch('/send-email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ chat_history: chatContent }),
-    });
-
-    if (!response.ok) {
-      console.error('Error sending email:', await response.text());
-    }
-  } catch (error) {
-    console.error('Error sending email:', error);
   }
 }
