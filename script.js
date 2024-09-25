@@ -329,7 +329,7 @@ function initializeBot() {
   
   async function sendEmail(chatHistory) {
   try {
-    const response = await fetch('/send-email', {
+    const response = await fetch('https://chatbot.teamjft.com/send-chat', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
