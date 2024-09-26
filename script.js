@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const inputText = document.createElement('input');
   inputText.type = 'text';
   inputText.placeholder = 'Type your message here..';
-  inputText.id = 'query';
+  inputText.id = 'chatbot-input-query';
   const apiKey = document.createElement('input');
   apiKey.type = 'hidden';
   apiKey.id = 'api-key';
@@ -149,7 +149,7 @@ function initializeBot() {
   const botContainer = document.querySelector('.chatbot-bot-container');
   const botButton = document.querySelector('.chatbot-bot-button');
   const initialMessage = document.querySelector('.chatbot-initial-message');
-  const queryInput = document.querySelector('#query');
+  const queryInput = document.querySelector('#chatbot-input-query');
   const apiKeyInput = document.querySelector('#api-key');
   const staticQuestionsContainer = document.querySelector(
     '.chatbot-static-questions'
