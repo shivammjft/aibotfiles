@@ -48,7 +48,7 @@
 
 @media (max-width: 540px) {
   .chatbot-company-name {
-    display: hidden;
+    display: none;
   }
   .chatbot-container {
     font-size: 14px;
