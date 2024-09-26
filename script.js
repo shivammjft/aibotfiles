@@ -46,21 +46,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const actionDiv = document.createElement('div');
   actionDiv.className = 'chatbot-action';
   const upArrowBtn = document.createElement('button');
-  upArrowBtn.id = 'up-arrow';
+  upArrowBtn.id = 'chatbot-up-arrow';
   upArrowBtn.title = 'Go to top';
   const upArrowImg = document.createElement('img');
   upArrowImg.classList.add('chatbotImg');
   upArrowImg.src = 'https://aibotfiles.vercel.app/uparrow.png';
   upArrowBtn.appendChild(upArrowImg);
   const minimizeBtn = document.createElement('button');
-  minimizeBtn.id = 'minimize';
+  minimizeBtn.id = 'chatbot-minimize';
   minimizeBtn.title = 'Minimize';
   const minimizeImg = document.createElement('img');
   minimizeImg.classList.add('chatbotImg');
   minimizeImg.src = 'https://aibotfiles.vercel.app/minus.png';
   minimizeBtn.appendChild(minimizeImg);
   const clearBtn = document.createElement('button');
-  clearBtn.id = 'clear';
+  clearBtn.id = 'chatbot-clear';
   clearBtn.title = 'Clear chat';
   const clearImg = document.createElement('img');
   clearImg.classList.add('chatbotImg');
@@ -177,17 +177,17 @@ function initializeBot() {
 
   document.addEventListener('click', (e) => {
     if (!document.querySelector('.chatbot-container').contains(e.target)) {
-      document.querySelector('#minimize').click();
+      document.querySelector('#chatbot-minimize').click();
     }
   });
 
   queryInput.focus();
 
-  document.querySelector('#up-arrow').addEventListener('click', () => {
+  document.querySelector('#chatbot-up-arrow').addEventListener('click', () => {
     initialMessage.scrollIntoView({ behavior: 'smooth' });
   });
 
-  document.querySelector('#minimize').addEventListener('click', () => {
+  document.querySelector('#chatbot-minimize').addEventListener('click', () => {
     botContainer.style.display = 'none';
     botButton.removeAttribute('style');
   });
@@ -196,7 +196,7 @@ function initializeBot() {
     sendEmail(chatHistory);
   });
 
-  document.querySelector('#clear').addEventListener('click', () => {
+  document.querySelector('#chatbot-clear').addEventListener('click', () => {
     sendEmail(chatHistory);
     clearAllMessages();
   });
