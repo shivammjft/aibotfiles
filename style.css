@@ -96,8 +96,8 @@ chatbotHeader {
   object-fit: contain;
 }
 
-button {
-  /* background: none; */
+#chatbot-bot-container button {
+  background: none;
   outline: none;
   border: none;
   cursor: pointer;
