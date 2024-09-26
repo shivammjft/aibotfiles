@@ -43,25 +43,30 @@
   height: 750px;
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow-outer);
+  transition: all 0.3s ease;
 }
 
 @media (max-width: 540px) {
-  .chatbot-bot-container {
-    width: 100%;
-    height: 750px;
-    padding: 1rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .chatbot-container{
+  .chatbot-container {
+    font-size: 14px;
     bottom: 20px;
     right: 20px;
   }
   .chatbot-bot-container {
-    width: 100%;
-    height: 540px;
-    padding: 0.5rem;
+    width: 500px;
+    height: 650px; 
+  }
+}
+
+@media (max-width: 360px) {
+  .chatbot-container {
+    font-size: 12px;
+    bottom: 10px;
+    right: 10px;
+  }
+  .chatbot-bot-container {
+    width: 300px;
+    height: 500px; 
   }
 }
 
