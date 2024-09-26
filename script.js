@@ -45,21 +45,21 @@ document.addEventListener('DOMContentLoaded', () => {
   // Create action buttons
   const actionDiv = document.createElement('div');
   actionDiv.className = 'chatbot-action';
-  const upArrowBtn = document.createElement('button');
+  const upArrowBtn = document.createElement('chatbotButton');
   upArrowBtn.id = 'chatbot-up-arrow';
   upArrowBtn.title = 'Go to top';
   const upArrowImg = document.createElement('img');
   upArrowImg.classList.add('chatbotImg');
   upArrowImg.src = 'https://aibotfiles.vercel.app/uparrow.png';
   upArrowBtn.appendChild(upArrowImg);
-  const minimizeBtn = document.createElement('button');
+  const minimizeBtn = document.createElement('chatbotButton');
   minimizeBtn.id = 'chatbot-minimize';
   minimizeBtn.title = 'Minimize';
   const minimizeImg = document.createElement('img');
   minimizeImg.classList.add('chatbotImg');
   minimizeImg.src = 'https://aibotfiles.vercel.app/minus.png';
   minimizeBtn.appendChild(minimizeImg);
-  const clearBtn = document.createElement('button');
+  const clearBtn = document.createElement('chatbotButton');
   clearBtn.id = 'chatbot-clear';
   clearBtn.title = 'Clear chat';
   const clearImg = document.createElement('img');
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
   apiKey.type = 'hidden';
   apiKey.id = 'chatbot-api-key';
   apiKey.value = apiKeyFromScriptTagId;
-  const sendBtn = document.createElement('button');
+  const sendBtn = document.createElement('chatbotButton');
   sendBtn.type = 'submit';
   sendBtn.title = 'Send message';
   const sendImg = document.createElement('img');
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
   botContainer.appendChild(footer);
 
   // Create the bot-button and its content
-  const botButton = document.createElement('button');
+  const botButton = document.createElement('chatbotButton');
   botButton.className = 'chatbot-bot-button';
   botButton.title = 'Jelly';
   const botButtonImg = document.createElement('img');
@@ -238,7 +238,7 @@ function initializeBot() {
 
   function showStaticQuestions() {
     staticQuestions.map((question, index) => {
-      const button = document.createElement('button');
+      const button = document.createElement('chatbotButton');
       button.classList.add('chatbot-static-question');
       button.textContent = question;
       button.addEventListener('click', () => showStaticAnswers(index));

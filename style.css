@@ -22,13 +22,13 @@
   z-index: 1000;
 }
 
-.chatbot-container > button {
+.chatbot-container > chatbotButton {
   border-radius: 9999px;
   width: 5rem;
   height: 5rem;
 }
 
-.chatbot-container > button > img {
+.chatbot-container > chatbotButton > img {
   border-radius: 9999px;
   width: 5rem;
   height: 5rem;
@@ -48,7 +48,7 @@
 chatbotHeader {
   display: flex;
   gap: 1rem;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -85,7 +85,7 @@ chatbotHeader {
   margin-right: 1rem;
 }
 
-.chatbot-action button {
+.chatbot-action chatbotButton {
   width: 1.5rem;
   height: 1.5rem;
 }
@@ -96,14 +96,14 @@ chatbotHeader {
   object-fit: contain;
 }
 
-.chatbot-bot-container button,
+.chatbot-bot-container chatbotButton,
 .chatbot-bot-button {
   outline: none;
   border: none;
   cursor: pointer;
 }
 
-.chatbot-bot-container button {
+.chatbot-bot-container chatbotButton {
   background: none;
 }
 
@@ -261,7 +261,7 @@ chatbotSection {
   color: rgb(161, 161, 161);
 }
 
-#chatbot-query-form button {
+#chatbot-query-form chatbotButton {
   margin-left: 1rem;
   margin-right: 1rem;
 }
