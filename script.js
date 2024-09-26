@@ -49,18 +49,21 @@ document.addEventListener('DOMContentLoaded', () => {
   upArrowBtn.id = 'up-arrow';
   upArrowBtn.title = 'Go to top';
   const upArrowImg = document.createElement('img');
+  upArrowImg.classList.add('chatbotImg');
   upArrowImg.src = 'https://aibotfiles.vercel.app/uparrow.png';
   upArrowBtn.appendChild(upArrowImg);
   const minimizeBtn = document.createElement('button');
   minimizeBtn.id = 'minimize';
   minimizeBtn.title = 'Minimize';
   const minimizeImg = document.createElement('img');
+  minimizeImg.classList.add('chatbotImg');
   minimizeImg.src = 'https://aibotfiles.vercel.app/minus.png';
   minimizeBtn.appendChild(minimizeImg);
   const clearBtn = document.createElement('button');
   clearBtn.id = 'clear';
   clearBtn.title = 'Clear chat';
   const clearImg = document.createElement('img');
+  clearImg.classList.add('chatbotImg');
   clearImg.src = 'https://aibotfiles.vercel.app/delete.png';
   clearBtn.appendChild(clearImg);
   actionDiv.appendChild(upArrowBtn);
@@ -77,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const initialGreetings = document.createElement('div');
   initialGreetings.className = 'chatbot-initial-greetings';
   const greetingImg = document.createElement('img');
+  greetingImg.classList.add('chatbotImg');
   greetingImg.src = 'https://aibotfiles.vercel.app/bot.png';
   const initialMessage = document.createElement('span');
   initialMessage.className = 'chatbot-initial-message';
@@ -107,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
   sendBtn.type = 'submit';
   sendBtn.title = 'Send message';
   const sendImg = document.createElement('img');
+  sendImg.classList.add('chatbotImg');
   sendImg.src = 'https://aibotfiles.vercel.app/send-message.png';
   sendBtn.appendChild(sendImg);
   form.appendChild(inputText);
