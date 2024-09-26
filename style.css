@@ -47,10 +47,8 @@
 }
 
 @media (max-width: 540px) {
-  chatbotHeader {
-    flex-direction: column;
-    justify-content: center;
-    align-items: baseline;
+  .chatbot-title-bar {
+    display: none;
   }
   .chatbot-container {
     font-size: 14px;
