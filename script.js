@@ -206,7 +206,7 @@ function initializeBot() {
     botContainer.style.display = 'flex';
   });
 
-  document.querySelector('#query-form').addEventListener('submit', sendQuery);
+  document.querySelector('#chatbot-query-form').addEventListener('submit', sendQuery);
 
   showStaticQuestions();
 
