@@ -45,7 +45,7 @@
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow-outer);
 }
 
-header {
+header .chatbot-header{
   display: flex;
   gap: 1rem;
   justify-content: space-around;
@@ -102,7 +102,7 @@ button {
   cursor: pointer;
 }
 
-section {
+section .chatbot-section{
   display: flex;
   flex-direction: column;
   overflow-y: auto;

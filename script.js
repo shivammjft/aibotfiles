@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Create the header
   const header = document.createElement('header');
+  header.classList.add('chatbot-header');
   const titleBar = document.createElement('div');
   titleBar.className = 'chatbot-title-bar';
   const logoImg = document.createElement('img');
@@ -73,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Create the section with initial greetings and static questions
   const section = document.createElement('section');
+  section.classList.add('chatbot-section');
   const initialGreetings = document.createElement('div');
   initialGreetings.className = 'chatbot-initial-greetings';
   const greetingImg = document.createElement('img');
@@ -149,6 +151,7 @@ function initializeBot() {
     '.chatbot-static-questions'
   );
   const responseSection = document.querySelector('section');
+  responseSection.classList.add('chatbot-section');
   const sessionId = Math.ceil(Math.random() * 10000).toString();
   let response = [];
   const staticQuestions = [];
