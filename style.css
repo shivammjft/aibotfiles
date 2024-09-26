@@ -96,7 +96,7 @@ chatbotHeader {
   object-fit: contain;
 }
 
-.chatbot-bot-container button, .chatbot-bot-button button {
+.chatbot-bot-container button, .chatbot-bot-button img {
   outline: none;
   border: none;
   cursor: pointer;
