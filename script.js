@@ -109,8 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
   apiKey.value = apiKeyFromScriptTagId;
   const sendBtn = document.createElement('chatbotButton');
   sendBtn.addEventListener('click', (event) => {
-    form.submit();
-    event.preventDefault();
+    document.querySelector('#chatbot-query-form').submit();
   });
   sendBtn.title = 'Send message';
   const sendImg = document.createElement('img');
