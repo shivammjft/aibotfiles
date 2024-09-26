@@ -109,9 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
   apiKey.value = apiKeyFromScriptTagId;
   const sendBtn = document.createElement('chatbotButton');
   sendBtn.title = 'Send message';
-  sendBtn.addEventListener('click', (e) => {
-    sendQuery(e);
-  });
   const sendImg = document.createElement('img');
   sendImg.classList.add('chatbotImg');
   sendImg.src = 'https://aibotfiles.vercel.app/send-message.png';
@@ -119,6 +116,9 @@ document.addEventListener('DOMContentLoaded', () => {
   form.appendChild(inputText);
   form.appendChild(apiKey);
   form.appendChild(sendBtn);
+  document.querySelector('chatbotButton').addEventListener('click', (e) => {
+    sendQuery(e);
+  });
   const poweredBy = document.createElement('div');
   poweredBy.innerHTML = '<span>&copy;</span> Powered by Jellyfish Technologies';
   footer.appendChild(form);
