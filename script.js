@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Create the bot-button and its content
   const botButton = document.createElement('button');
-  botButton.className = 'bot-button';
+  botButton.className = 'chatbot-bot-button';
   botButton.title = 'Jelly';
   const botButtonImg = document.createElement('img');
   botButtonImg.src = 'https://aibotfiles.vercel.app/bot.png';
@@ -141,7 +141,7 @@ function initializeBot() {
   console.log('Initializing bot'); // Debugging statement
 
   const botContainer = document.querySelector('.chatbot-bot-container');
-  const botButton = document.querySelector('.bot-button');
+  const botButton = document.querySelector('.chatbot-bot-button');
   const initialMessage = document.querySelector('.chatbot-initial-message');
   const queryInput = document.querySelector('#query');
   const apiKeyInput = document.querySelector('#api-key');
