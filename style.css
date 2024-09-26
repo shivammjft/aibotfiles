@@ -96,11 +96,14 @@ chatbotHeader {
   object-fit: contain;
 }
 
-.chatbot-bot-container button {
-  background: none;
+.chatbot-bot-container button, .chatbot-bot-button button {
   outline: none;
   border: none;
   cursor: pointer;
+}
+
+.chatbot-bot-container button {
+  background: none;
 }
 
 chatbotSection {
