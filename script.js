@@ -129,7 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
   botButton.className = 'chatbot-bot-button';
   botButton.title = 'Jelly';
   const botButtonImg = document.createElement('img');
-  botButtonImg.classList.add('chatbotImg');
   botButtonImg.src = 'https://aibotfiles.vercel.app/bot.png';
   botButton.appendChild(botButtonImg);
 
@@ -161,8 +160,10 @@ function initializeBot() {
   const staticQuestions = [];
   const staticAnswers = [];
   const botAvatar = document.createElement('img');
+  botAvatar.classList.add('chatbotImg');
   botAvatar.setAttribute('src', 'https://aibotfiles.vercel.app/bot.png');
   const userAvatar = document.createElement('img');
+  userAvatar.classList.add('chatbotImg');
   userAvatar.setAttribute('src', 'https://aibotfiles.vercel.app/user.png');
 
   if (!queryInput) {
