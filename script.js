@@ -108,7 +108,9 @@ document.addEventListener('DOMContentLoaded', () => {
   apiKey.id = 'chatbot-api-key';
   apiKey.value = apiKeyFromScriptTagId;
   const sendBtn = document.createElement('chatbotButton');
-  sendBtn.type = 'submit';
+  sendBtn.addEventListener('click', () => {
+    form.submit();
+  });
   sendBtn.title = 'Send message';
   const sendImg = document.createElement('img');
   sendImg.classList.add('chatbotImg');
@@ -206,7 +208,9 @@ function initializeBot() {
     botContainer.style.display = 'flex';
   });
 
-  document.querySelector('#chatbot-query-form').addEventListener('submit', sendQuery);
+  document
+    .querySelector('#chatbot-query-form')
+    .addEventListener('submit', sendQuery);
 
   showStaticQuestions();
 
