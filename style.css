@@ -2,8 +2,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
 :root {
@@ -45,7 +45,7 @@
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow-outer);
 }
 
-header .chatbot-header{
+chatbotHeader {
   display: flex;
   gap: 1rem;
   justify-content: space-around;
@@ -102,7 +102,7 @@ button {
   cursor: pointer;
 }
 
-section .chatbot-section{
+chatbotSection {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -274,7 +274,7 @@ hr {
 }
 
 .chatbot-typing span {
-  content: "";
+  content: '';
   animation: blink 1.5s infinite;
   animation-fill-mode: both;
   height: 10px;
