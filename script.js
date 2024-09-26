@@ -116,9 +116,9 @@ document.addEventListener('DOMContentLoaded', () => {
   form.appendChild(inputText);
   form.appendChild(apiKey);
   form.appendChild(sendBtn);
-  // document.querySelector('chatbotButton').addEventListener('click', (e) => {
-  //   sendQuery(e);
-  // });
+  document.querySelector('chatbotbutton').addEventListener('click', (e) => {
+    sendQuery(e);
+  });
   const poweredBy = document.createElement('div');
   poweredBy.innerHTML = '<span>&copy;</span> Powered by Jellyfish Technologies';
   footer.appendChild(form);
