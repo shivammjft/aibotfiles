@@ -129,6 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
   botButton.className = 'chatbot-bot-button';
   botButton.title = 'Jelly';
   const botButtonImg = document.createElement('img');
+  botButtonImg.classList.add('chatbotImg');
   botButtonImg.src = 'https://aibotfiles.vercel.app/bot.png';
   botButton.appendChild(botButtonImg);
 
