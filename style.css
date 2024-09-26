@@ -239,13 +239,14 @@ footer div span {
   font-size: 18px;
 }
 
-form {
+#chatbot-query-form {
   display: flex;
   align-items: center;
   width: 100%;
+  background-color: red;
 }
 
-form input {
+#chatbot-query-form input {
   padding: 0.5rem;
   flex: 1 1 0%;
   outline-style: none;
@@ -253,11 +254,11 @@ form input {
   font-size: 1rem;
 }
 
-form input::placeholder {
+#chatbot-query-form input::placeholder {
   color: rgb(161, 161, 161);
 }
 
-form button {
+#chatbot-query-form button {
   margin-left: 1rem;
   margin-right: 1rem;
 }
