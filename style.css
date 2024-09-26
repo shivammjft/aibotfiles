@@ -86,12 +86,10 @@ chatbotHeader {
 }
 
 .chatbot-action button,
-img {
+
+.chatbotImg {
   width: 1.5rem;
   height: 1.5rem;
-}
-
-img {
   object-fit: contain;
 }
 

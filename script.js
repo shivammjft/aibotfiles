@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const titleBar = document.createElement('div');
   titleBar.className = 'chatbot-title-bar';
   const logoImg = document.createElement('img');
+  logoImg.classList.add('chatbotImg');
   logoImg.src = 'https://aibotfiles.vercel.app/bot.png';
   logoImg.className = 'chatbot-logo';
   const companyName = document.createElement('h1');
