@@ -56,7 +56,7 @@
     right: 20px;
   }
   .chatbot-bot-container {
-    width: 500px;
+    width: 450px;
     height: 650px;
   }
 }
@@ -68,7 +68,7 @@
     right: 10px;
   }
   .chatbot-bot-container {
-    width: 300px;
+    width: 250px;
     height: 500px;
   }
 }
