@@ -90,7 +90,7 @@ chatbotHeader {
   height: 1.5rem;
 }
 
-img {
+.chatbotImg {
   width: 1.5rem;
   height: 1.5rem;
   object-fit: contain;
