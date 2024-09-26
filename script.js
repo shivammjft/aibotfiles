@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   var link = document.createElement('link');
   // Set the attributes for the <link> element
   link.rel = 'stylesheet';
-  link.href = './style.css';
+  link.href = 'https://aibotfiles.vercel.app/style.css';
 
   // Append the <link> element to the <head>
   document.head.appendChild(link);
