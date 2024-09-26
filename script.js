@@ -110,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const sendBtn = document.createElement('chatbotButton');
   sendBtn.title = 'Send message';
   sendBtn.addEventListener('click', (e) => {
-    e.preventDefault();
     sendQuery(e);
   });
   const sendImg = document.createElement('img');
