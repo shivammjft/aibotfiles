@@ -96,7 +96,8 @@ chatbotHeader {
   object-fit: contain;
 }
 
-.chatbot-bot-container button, .chatbot-bot-button {
+.chatbot-bot-container button,
+.chatbot-bot-button {
   outline: none;
   border: none;
   cursor: pointer;
@@ -219,7 +220,7 @@ chatbotSection {
   overflow-wrap: anywhere;
 }
 
-footer {
+.chatbot-bot-container footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -233,12 +234,12 @@ footer {
   height: 90px;
 }
 
-footer div {
+.chatbot-bot-container footer div {
   color: rgb(161, 161, 161);
   font-size: 14px;
 }
 
-footer div span {
+.chatbot-bot-container footer div span {
   font-size: 18px;
 }
 
@@ -265,7 +266,7 @@ footer div span {
   margin-right: 1rem;
 }
 
-hr {
+.chatbot-bot-container hr {
   width: 100%;
   border: none;
   height: 1px;
