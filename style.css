@@ -47,17 +47,15 @@
 
 @media (max-width: 768px) {
   .chatbot-bot-container {
-    width: 100%;
-    height: auto; /* Allows the height to adjust based on content */
-    padding: 1rem;
+    width: 80%; /* Scale down width */
+    height: calc(90% * 0.72); /* Maintain aspect ratio (90% of original width) */
   }
 }
 
 @media (max-width: 480px) {
   .chatbot-bot-container {
-    width: 100%;
-    height: auto;
-    padding: 0.5rem;
+    width: 80%; /* Full width on small screens */
+    height: calc(100% * 0.72); /* Maintain aspect ratio (100% of full width) */
   }
 }
 
