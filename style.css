@@ -126,12 +126,16 @@ chatbotHeader {
   background: none !important;
 }
 
-.chatbot-bot-container chatbotButton,
+.chatbot-bot-container chatbotButton {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
 .chatbot-bot-button {
   outline: none;
   border: none;
   cursor: pointer;
-  background: white;
+  background-color: red;
 }
 
 .chatbot-bot-container chatbotButton {
