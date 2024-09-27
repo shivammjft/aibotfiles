@@ -48,8 +48,8 @@
 
 @media (max-width: 700px) {
   .chatbot-bot-container {
-    width: 80%;
-    height: 650px;
+    width: 70dvw;
+    height: 80dvh;
   }
 }
 
