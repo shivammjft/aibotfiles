@@ -296,6 +296,7 @@ function initializeBot() {
 
   async function sendQuery(e) {
     e.preventDefault();
+    if (!queryInput.value.trim()) return;
     queryInput.setAttribute('disabled', true);
     const query = queryInput.value;
     queryInput.value = '';
