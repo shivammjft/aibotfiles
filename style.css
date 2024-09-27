@@ -39,18 +39,13 @@
   flex-direction: column;
   border-radius: 1rem;
   background-color: #ffffff;
-  width: 540px;
-  height: 750px;
+  max-width: 540px;
+  max-height: 750px;
+  width: 70dvw;
+  height: 80dvh;
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow-outer);
   transition: all 0.3s ease;
-}
-
-@media (max-width: 700px) {
-  .chatbot-bot-container {
-    width: 70dvw;
-    height: 80dvh;
-  }
 }
 
 @media (max-width: 540px) {
@@ -62,9 +57,6 @@
     bottom: 20px;
     right: 20px;
   }
-  .chatbot-bot-container {
-    height: 650px;
-  }
 }
 
 @media (max-width: 360px) {
@@ -72,9 +64,6 @@
     font-size: 12px;
     bottom: 10px;
     right: 10px;
-  }
-  .chatbot-bot-container {
-    height: 500px;
   }
 }
 
