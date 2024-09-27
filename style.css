@@ -134,7 +134,7 @@ chatbotHeader {
   outline: none;
   border: none;
   cursor: pointer;
-  background: none;
+  background: none !important;
 }
 
 .chatbot-bot-container chatbotButton,
