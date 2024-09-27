@@ -107,7 +107,19 @@ document.addEventListener('DOMContentLoaded', () => {
   apiKey.type = 'hidden';
   apiKey.id = 'chatbot-api-key';
   apiKey.value = apiKeyFromScriptTagId;
-  const sendBtn = document.createElement('button');
+  const sendBtn = this.attachShadow({ mode: 'open' });
+  shadow.innerHTML = `
+      <style>
+        .button {
+          outline: none;
+          border: none;
+          cursor: pointer;
+          background: none;
+        }
+      </style>
+      <button class="button">Send message</button>
+    `;
+  // const sendBtn = document.createElement('button');
   sendBtn.title = 'Send message';
   const sendImg = document.createElement('img');
   sendImg.classList.add('chatbotImg');
