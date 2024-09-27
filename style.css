@@ -130,6 +130,11 @@ chatbotHeader {
   background: none !important;
 }
 
+.chatbot-send-button:active{
+  all: unset;
+  background: none !important;
+}
+
 .chatbot-bot-container chatbotButton,
 .chatbot-bot-button {
   outline: none;
