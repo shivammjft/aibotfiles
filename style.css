@@ -34,6 +34,10 @@
   height: 5rem;
 }
 
+.chatbot-bot-button img{
+background-color: red;
+}
+
 .chatbot-bot-container {
   display: flex;
   flex-direction: column;
@@ -126,18 +130,11 @@ chatbotHeader {
   background: none !important;
 }
 
-.chatbot-bot-container chatbotButton {
-  outline: none;
-  border: none;
-  cursor: pointer;
-}
+.chatbot-bot-container chatbotButton,
 .chatbot-bot-button {
   outline: none;
   border: none;
   cursor: pointer;
-  background-color: red;
-  height: 80px;
-  width: 80px;
 }
 
 .chatbot-bot-container chatbotButton {
