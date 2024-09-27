@@ -19,7 +19,7 @@
   bottom: 40px;
   right: 40px;
   user-select: none;
-  z-index: 5000;
+  z-index: 20000000000000;
 }
 
 .chatbot-container > chatbotButton {
