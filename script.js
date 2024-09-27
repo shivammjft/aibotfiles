@@ -337,6 +337,7 @@ function initializeBot() {
   }
 
   async function sendEmail(chatHistory) {
+    if(!chatHistory) return;
     const apiKey = apiKeyInput.value;
     const bearerToken = 'Bearer ' + apiKey.trim();
 
