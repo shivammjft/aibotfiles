@@ -129,6 +129,14 @@ chatbotHeader {
   object-fit: contain;
 }
 
+.chatbot-send-button {
+  all: unset;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
 .chatbot-bot-container chatbotButton,
 .chatbot-bot-button {
   outline: none;

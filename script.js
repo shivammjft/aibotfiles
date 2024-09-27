@@ -107,13 +107,13 @@ document.addEventListener('DOMContentLoaded', () => {
   apiKey.type = 'hidden';
   apiKey.id = 'chatbot-api-key';
   apiKey.value = apiKeyFromScriptTagId;
-  const sendBtn = document.createElement('chatbotButton');
+  const sendBtn = document.createElement('button');
   sendBtn.title = 'Send message';
   const sendImg = document.createElement('img');
   sendImg.classList.add('chatbotImg');
   sendImg.src = 'https://aibotfiles.vercel.app/send-message.png';
   sendBtn.appendChild(sendImg);
-  sendBtn.role = 'button';
+  sendBtn.classList.add('chatbot-send-button');
   sendBtn.type = 'submit';
   form.appendChild(inputText);
   form.appendChild(apiKey);
