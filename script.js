@@ -1,5 +1,4 @@
 let chatbotKey;
-let chatHistory = [];
 document.addEventListener('DOMContentLoaded', () => {
   console.log('DOM fully loaded and parsed');
   // Create a new <link> element to load  the css
@@ -194,11 +193,11 @@ function initializeBot() {
   });
 
   window.addEventListener('beforeunload', () => {
-    sendEmail(chatHistory);
+    sendEmail(response);
   });
 
   document.querySelector('#chatbot-clear').addEventListener('click', () => {
-    sendEmail(chatHistory);
+    sendEmail(response);
     clearAllMessages();
   });
 
@@ -218,7 +217,6 @@ function initializeBot() {
       responseSection.removeChild(staticQuestionsContainer.nextSibling);
     }
     response = [];
-    chatHistory = [];
     queryInput.focus();
   }
 
@@ -266,7 +264,6 @@ function initializeBot() {
       div.appendChild(userAvatar.cloneNode());
       responseSection.appendChild(div);
       responseSection.scrollTop = responseSection.scrollHeight;
-      chatHistory.push(text);
     } else if (type === 'data') {
       div.classList.add('chatbot-response-message-container');
       span.classList.add('chatbot-response-message');
@@ -274,7 +271,6 @@ function initializeBot() {
       div.appendChild(span);
       responseSection.appendChild(div);
       textTypingEffect(span, text);
-      chatHistory.push(text);
       if (link) {
         const a = document.createElement('a');
         a.setAttribute('target', '_blank');
@@ -341,13 +337,21 @@ function initializeBot() {
   }
 
   async function sendEmail(chatHistory) {
+    const apiKey = apiKeyInput.value;
+    const bearerToken = 'Bearer ' + apiKey.trim();
+
     try {
       const response = await fetch('https://chatbot.teamjft.com/send-chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: bearerToken,
         },
-        body: JSON.stringify({ chatHistory: chatHistory.join('\n') }),
+        body: JSON.stringify({
+          chatHistory,
+          chatbot_id: chatbotKey,
+          session_id: sessionId,
+        }),
       });
 
       if (!response.ok) {
