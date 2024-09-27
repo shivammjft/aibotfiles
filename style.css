@@ -136,6 +136,8 @@ chatbotHeader {
   border: none;
   cursor: pointer;
   background-color: red;
+  height: 80px;
+  width: 80px;
 }
 
 .chatbot-bot-container chatbotButton {
