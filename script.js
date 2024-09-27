@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
   apiKey.type = 'hidden';
   apiKey.id = 'chatbot-api-key';
   apiKey.value = apiKeyFromScriptTagId;
-  const sendBtn = this.attachShadow({ mode: 'open' });
+  const sendBtn = attachShadow({ mode: 'open' });
   shadow.innerHTML = `
       <style>
         .button {
