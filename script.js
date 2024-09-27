@@ -113,12 +113,11 @@ document.addEventListener('DOMContentLoaded', () => {
   sendImg.classList.add('chatbotImg');
   sendImg.src = 'https://aibotfiles.vercel.app/send-message.png';
   sendBtn.appendChild(sendImg);
+  sendBtn.role = 'button';
+  sendBtn.type = 'submit';
   form.appendChild(inputText);
   form.appendChild(apiKey);
   form.appendChild(sendBtn);
-  document.querySelector('chatbotbutton').addEventListener('click', (e) => {
-    sendQuery(e);
-  });
   const poweredBy = document.createElement('div');
   poweredBy.innerHTML = '<span>&copy;</span> Powered by Jellyfish Technologies';
   footer.appendChild(form);
