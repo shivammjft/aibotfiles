@@ -61,8 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
   clearImg.classList.add('chatbotImg');
   clearImg.src = 'https://aibotfiles.vercel.app/delete.png';
   clearBtn.appendChild(clearImg);
-  actionDiv.appendChild(upArrowBtn);
   actionDiv.appendChild(minimizeBtn);
+  actionDiv.appendChild(upArrowBtn);
   actionDiv.appendChild(clearBtn);
 
   header.appendChild(titleBar);
