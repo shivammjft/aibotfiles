@@ -1,33 +1,25 @@
 let chatbotKey;
 document.addEventListener('DOMContentLoaded', () => {
   console.log('DOM fully loaded and parsed');
-  // Create a new <link> element to load  the css
   var link = document.createElement('link');
-  // Set the attributes for the <link> element
   link.rel = 'stylesheet';
-  link.href = 'https://aibotfiles.vercel.app/style.css';
+  link.href = 'style.css';
 
-  // Append the <link> element to the <head>
   document.head.appendChild(link);
 
-  // Extracting information for initialization
-  let ap = document.getElementById('ai-jellyfishbot');
-  const apiDataForBot = ap.innerText.split(',');
-  const apiKeyFromScriptTagId = apiDataForBot[0];
-  chatbotKey = apiDataForBot[1];
-  const CompanyName = apiDataForBot[2];
-  const CompanyBotName = apiDataForBot[3];
+  let scriptContent = document.getElementById('ai-jellyfishbot');
+  const apiKeyFromScriptTagId = scriptContent.dataset.apiKey;
+  chatbotKey = scriptContent.dataset.botId;
+  const CompanyName = scriptContent.dataset.companyName;
+  const CompanyBotName = scriptContent.dataset.botName;
 
-  // Create the container div
   const container = document.createElement('div');
   container.className = 'chatbot-container';
 
-  // Create the bot-container div and its content
   const botContainer = document.createElement('div');
   botContainer.className = 'chatbot-bot-container';
   botContainer.style.display = 'none';
 
-  // Create the header
   const header = document.createElement('chatbotHeader');
   const titleBar = document.createElement('div');
   titleBar.className = 'chatbot-title-bar';
@@ -41,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
   titleBar.appendChild(logoImg);
   titleBar.appendChild(companyName);
 
-  // Create action buttons
   const actionDiv = document.createElement('div');
   actionDiv.className = 'chatbot-action';
   const upArrowBtn = document.createElement('chatbotButton');
@@ -69,12 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
   actionDiv.appendChild(minimizeBtn);
   actionDiv.appendChild(clearBtn);
 
-  // Append header and action buttons to the bot-container
   header.appendChild(titleBar);
   header.appendChild(actionDiv);
   botContainer.appendChild(header);
 
-  // Create the section with initial greetings and static questions
   const section = document.createElement('chatbotSection');
   const initialGreetings = document.createElement('div');
   initialGreetings.className = 'chatbot-initial-greetings';
@@ -92,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
   section.appendChild(staticQuestions);
   botContainer.appendChild(section);
 
-  // Add horizontal rule and footer
   const hr = document.createElement('hr');
   const footer = document.createElement('footer');
   const form = document.createElement('form');
@@ -124,7 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
   botContainer.appendChild(hr);
   botContainer.appendChild(footer);
 
-  // Create the bot-button and its content
   const botButton = document.createElement('chatbotButton');
   botButton.className = 'chatbot-bot-button';
   botButton.title = 'Jelly';
@@ -132,19 +119,16 @@ document.addEventListener('DOMContentLoaded', () => {
   botButtonImg.src = 'https://aibotfiles.vercel.app/bot.png';
   botButton.appendChild(botButtonImg);
 
-  // Append everything to the container
   container.appendChild(botContainer);
   container.appendChild(botButton);
 
-  // Append the container to the body
   document.body.appendChild(container);
 
-  // Initialize bot
   initializeBot();
 });
 
 function initializeBot() {
-  console.log('Initializing bot'); // Debugging statement
+  console.log('Initializing bot');
 
   const botContainer = document.querySelector('.chatbot-bot-container');
   const botButton = document.querySelector('.chatbot-bot-button');
@@ -167,11 +151,11 @@ function initializeBot() {
   userAvatar.setAttribute('src', 'https://aibotfiles.vercel.app/user.png');
 
   if (!queryInput) {
-    console.error('Query input not found'); // Debugging statement
+    console.error('Query input not found');
     return;
   }
   if (!apiKeyInput) {
-    console.error('API key input not found'); // Debugging statement
+    console.error('API key input not found');
     return;
   }
 
@@ -337,7 +321,7 @@ function initializeBot() {
   }
 
   async function sendEmail(chatHistory) {
-    if(!chatHistory) return;
+    if (!chatHistory) return;
     const apiKey = apiKeyInput.value;
     const bearerToken = 'Bearer ' + apiKey.trim();
 
