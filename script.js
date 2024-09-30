@@ -8,6 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
   document.head.appendChild(link);
 
   let scriptContent = document.getElementById('ai-jellyfishbot');
+  // if (
+  //   !scriptContent.dataset.apiKey ||
+  //   !scriptContent.dataset.botId ||
+  //   !scriptContent.dataset.companyName ||
+  //   !scriptContent.dataset.botName
+  // ) {
+  //   createResponseElements(
+  //     'Either api key, bot id, company name or bot name attributes are missing, please check your script tag',
+  //     'error'
+  //   );
+  //   return;
+  // }
   const apiKeyFromScriptTagId = scriptContent.dataset.apiKey;
   chatbotKey = scriptContent.dataset.botId;
   const CompanyName = scriptContent.dataset.companyName || '"Company Name"';
@@ -195,6 +207,19 @@ function initializeBot() {
   //   .addEventListener('submit', sendQuery);
 
   showStaticQuestions();
+  let scriptContent = document.getElementById('ai-jellyfishbot');
+  if (
+    !scriptContent.dataset.apiKey ||
+    !scriptContent.dataset.botId ||
+    !scriptContent.dataset.companyName ||
+    !scriptContent.dataset.botName
+  ) {
+    createResponseElements(
+      'Either api key, bot id, company name or bot name attributes are missing, please check your script tag',
+      'error'
+    );
+    return;
+  }
 
   function clearAllMessages() {
     while (staticQuestionsContainer.nextSibling) {

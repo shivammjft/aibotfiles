@@ -234,7 +234,8 @@ chatbotSection {
   border-radius: 1rem;
   line-height: 24px;
   background-color: #ffffff;
-  cursor: pointer;
+  user-select: text;
+  /* cursor: pointer; */
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow-inner);
   word-break: break-word;
