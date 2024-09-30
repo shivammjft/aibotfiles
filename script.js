@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let scriptContent = document.getElementById('ai-jellyfishbot');
   const apiKeyFromScriptTagId = scriptContent.dataset.apiKey;
   chatbotKey = scriptContent.dataset.botId;
-  const CompanyName = scriptContent.dataset.companyName;
-  const CompanyBotName = scriptContent.dataset.botName;
+  const CompanyName = scriptContent.dataset.companyName || '"Company Name"';
+  const CompanyBotName = scriptContent.dataset.botName || '"Bot Name"';
 
   const container = document.createElement('div');
   container.className = 'chatbot-container';
@@ -176,23 +176,23 @@ function initializeBot() {
     botButton.removeAttribute('style');
   });
 
-  window.addEventListener('beforeunload', () => {
-    sendEmail(response);
-  });
+  // window.addEventListener('beforeunload', () => {
+  //   sendEmail(response);
+  // });
 
-  document.querySelector('#chatbot-clear').addEventListener('click', () => {
-    sendEmail(response);
-    clearAllMessages();
-  });
+  // document.querySelector('#chatbot-clear').addEventListener('click', () => {
+  //   sendEmail(response);
+  //   clearAllMessages();
+  // });
 
   botButton.addEventListener('click', () => {
     botButton.style.display = 'none';
     botContainer.style.display = 'flex';
   });
 
-  document
-    .querySelector('#chatbot-query-form')
-    .addEventListener('submit', sendQuery);
+  // document
+  //   .querySelector('#chatbot-query-form')
+  //   .addEventListener('submit', sendQuery);
 
   showStaticQuestions();
 
