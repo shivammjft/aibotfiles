@@ -53,9 +53,6 @@ background-color: white;
 }
 
 @media (max-width: 540px) {
-  .chatbot-company-name {
-    display: none;
-  }
   .chatbot-container {
     font-size: 14px;
     bottom: 20px;
@@ -73,8 +70,8 @@ background-color: white;
 
 chatbotHeader {
   display: flex;
-  gap: 1rem;
-  justify-content: space-between;
+  gap: 8rem;
+  justify-content: space-around;
   align-items: center;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -96,10 +93,17 @@ chatbotHeader {
   border-radius: 100%;
 }
 
-.chatbot-company-name {
+.chatbot-company-name h1{
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.chatbot-company-name h3{
   font-size: 1.125rem;
   line-height: 1.75rem;
-  font-weight: 700;
+  font-weight: 500;
   color: #ffffff;
 }
 
@@ -154,6 +158,8 @@ chatbotSection {
   flex: 1 1 0%;
   gap: 1rem;
   width: 100%;
+  font-size: 1.2rem;
+  background-color: rgb(245, 245, 245);
 }
 
 .chatbot-response-link {
@@ -166,6 +172,8 @@ chatbotSection {
 }
 
 .chatbot-initial-greetings {
+  font-weight: 500;
+  color: grey;
   display: flex;
   gap: 0.5rem;
   justify-content: flex-start;
@@ -176,6 +184,7 @@ chatbotSection {
   display: flex;
   padding: 1rem;
   border-radius: 1rem;
+  border-bottom-left-radius: unset;
   background-color: #ffffff;
   line-height: 24px;
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
@@ -210,6 +219,8 @@ chatbotSection {
 }
 
 .chatbot-response-message-container {
+  color: grey;
+  font-weight: 500;
   display: flex;
   gap: 0.5rem;
   justify-content: flex-start;
@@ -218,6 +229,7 @@ chatbotSection {
 }
 
 .chatbot-user-message-container {
+  font-weight: 500;
   display: flex;
   gap: 0.5rem;
   justify-content: flex-end;
@@ -232,6 +244,7 @@ chatbotSection {
   white-space: pre-wrap;
   padding: 1rem;
   border-radius: 1rem;
+  border-bottom-left-radius: unset;
   line-height: 24px;
   background-color: #ffffff;
   user-select: text;
@@ -250,10 +263,12 @@ chatbotSection {
   display: flex;
   padding: 1rem;
   border-radius: 1rem;
+  border-bottom-right-radius: unset;
   line-height: 24px;
   background-color: var(--bg-sky-600);
   color: #ffffff;
-  cursor: pointer;
+  /* cursor: pointer; */
+  user-select: text;
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow-inner);
   word-break: break-word;

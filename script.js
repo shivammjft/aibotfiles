@@ -8,18 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.head.appendChild(link);
 
   let scriptContent = document.getElementById('ai-jellyfishbot');
-  // if (
-  //   !scriptContent.dataset.apiKey ||
-  //   !scriptContent.dataset.botId ||
-  //   !scriptContent.dataset.companyName ||
-  //   !scriptContent.dataset.botName
-  // ) {
-  //   createResponseElements(
-  //     'Either api key, bot id, company name or bot name attributes are missing, please check your script tag',
-  //     'error'
-  //   );
-  //   return;
-  // }
   const apiKeyFromScriptTagId = scriptContent.dataset.apiKey;
   chatbotKey = scriptContent.dataset.botId;
   const CompanyName = scriptContent.dataset.companyName || '"Company Name"';
@@ -39,11 +27,16 @@ document.addEventListener('DOMContentLoaded', () => {
   logoImg.classList.add('chatbotImg');
   logoImg.src = 'https://aibotfiles.vercel.app/bot.png';
   logoImg.className = 'chatbot-logo';
+  const titleContainer = document.createElement('div');
+  titleContainer.classList.add('chatbot-company-name');
   const companyName = document.createElement('h1');
-  companyName.className = 'chatbot-company-name';
   companyName.textContent = CompanyName;
+  const chatWithContainer = document.createElement('h3');
+  chatWithContainer.textContent = 'Chat with';
   titleBar.appendChild(logoImg);
-  titleBar.appendChild(companyName);
+  titleContainer.appendChild(chatWithContainer);
+  titleContainer.appendChild(companyName);
+  titleBar.appendChild(titleContainer);
 
   const actionDiv = document.createElement('div');
   actionDiv.className = 'chatbot-action';
@@ -84,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
   greetingImg.src = 'https://aibotfiles.vercel.app/bot.png';
   const initialMessage = document.createElement('span');
   initialMessage.className = 'chatbot-initial-message';
-  initialMessage.textContent = `Welcome! I'm ${CompanyBotName}, How can I assist you today?`;
+  initialMessage.textContent = `Welcome! I'm ${CompanyBotName}, How can I assist you today ?`;
   initialGreetings.appendChild(greetingImg);
   initialGreetings.appendChild(initialMessage);
   const staticQuestions = document.createElement('div');
@@ -100,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
   form.autocomplete = 'off';
   const inputText = document.createElement('input');
   inputText.type = 'text';
-  inputText.placeholder = 'Type your message here..';
+  inputText.placeholder = 'Enter your message.....';
   inputText.id = 'chatbot-input-query';
   const apiKey = document.createElement('input');
   apiKey.type = 'hidden';
@@ -202,9 +195,9 @@ function initializeBot() {
     botContainer.style.display = 'flex';
   });
 
-  // document
-  //   .querySelector('#chatbot-query-form')
-  //   .addEventListener('submit', sendQuery);
+  document
+    .querySelector('#chatbot-query-form')
+    .addEventListener('submit', sendQuery);
 
   showStaticQuestions();
   let scriptContent = document.getElementById('ai-jellyfishbot');
