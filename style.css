@@ -177,7 +177,7 @@ chatbotSection {
   display: flex;
   gap: 0.5rem;
   justify-content: flex-start;
-  width: 80%;
+  width: 60%;
 }
 
 .chatbot-initial-message {
@@ -227,7 +227,7 @@ chatbotSection {
   gap: 0.5rem;
   justify-content: flex-start;
   align-self: flex-start;
-  width: 90%;
+  width: 60%;
 }
 
 .chatbot-user-message-container {
@@ -236,7 +236,7 @@ chatbotSection {
   gap: 0.5rem;
   justify-content: flex-end;
   align-self: flex-end;
-  width: 70%;
+  width: 60%;
 }
 
 .chatbot-response-message,
