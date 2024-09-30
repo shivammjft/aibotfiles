@@ -34,8 +34,8 @@
   height: 5rem;
 }
 
-.chatbot-bot-button img{
-background-color: white;
+.chatbot-bot-button img {
+  background-color: white;
 }
 
 .chatbot-bot-container {
@@ -77,7 +77,7 @@ chatbotHeader {
   border-top-right-radius: 1rem;
   width: 100%;
   height: 90px;
-  background: linear-gradient(90deg, #079cef 0%, #025b8c 100%);
+  background: linear-gradient(180deg, #079cef 0%, #025b8c 100%);
 }
 
 .chatbot-title-bar {
@@ -93,14 +93,14 @@ chatbotHeader {
   border-radius: 100%;
 }
 
-.chatbot-company-name h1{
+.chatbot-company-name h1 {
   font-size: 1.5rem;
   line-height: 1.75rem;
   font-weight: 900;
   color: #ffffff;
 }
 
-.chatbot-company-name h3{
+.chatbot-company-name h3 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 500;
@@ -134,7 +134,7 @@ chatbotHeader {
   background: none !important;
 }
 
-.chatbot-send-button:active{
+.chatbot-send-button:active {
   all: unset;
   background: none !important;
 }
@@ -183,6 +183,8 @@ chatbotSection {
 .chatbot-initial-message {
   display: flex;
   padding: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   border-radius: 1rem;
   border-bottom-left-radius: unset;
   background-color: #ffffff;
@@ -243,6 +245,8 @@ chatbotSection {
   flex-direction: column;
   white-space: pre-wrap;
   padding: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   border-radius: 1rem;
   border-bottom-left-radius: unset;
   line-height: 24px;
@@ -262,10 +266,12 @@ chatbotSection {
 .chatbot-user-message {
   display: flex;
   padding: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   border-radius: 1rem;
   border-bottom-right-radius: unset;
   line-height: 24px;
-  background-color: var(--bg-sky-600);
+  background: linear-gradient(90deg, #079cef 0%, #025b8c 100%);
   color: #ffffff;
   /* cursor: pointer; */
   user-select: text;
@@ -278,7 +284,7 @@ chatbotSection {
 .chatbot-bot-container footer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -286,7 +292,8 @@ chatbotSection {
   padding-bottom: 1rem;
   max-height: 90px;
   width: 100%;
-  height: 90px;
+  height: 120px;
+  gap: 0.8rem;
 }
 
 .chatbot-bot-container footer div {
@@ -302,6 +309,9 @@ chatbotSection {
   display: flex;
   align-items: center;
   width: 100%;
+  padding: 2rem;
+  padding-top: unset;
+  padding-bottom: unset;
 }
 
 #chatbot-query-form input {
@@ -309,7 +319,7 @@ chatbotSection {
   flex: 1 1 0%;
   outline-style: none;
   border: none;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 #chatbot-query-form input::placeholder {

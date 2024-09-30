@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
   sendBtn.title = 'Send message';
   const sendImg = document.createElement('img');
   sendImg.classList.add('chatbotImg');
-  sendImg.src = 'https://aibotfiles.vercel.app/send-message.png';
+  sendImg.src = './Vector.svg';
   sendBtn.appendChild(sendImg);
   sendBtn.type = 'submit';
   form.appendChild(inputText);
