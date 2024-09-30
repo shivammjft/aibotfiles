@@ -65,8 +65,14 @@ document.addEventListener('DOMContentLoaded', () => {
   actionDiv.appendChild(upArrowBtn);
   actionDiv.appendChild(clearBtn);
 
+  const actionDropdownDiv = document.createElement('div');
+  actionDropdownDiv.classList = 'chatbot-action-dropdown';
+  const actionDropdownImg = document.createElement('img');
+  actionDropdownImg.src = 'expand-arrow.svg';
+  actionDropdownDiv.appendChild(actionDropdownImg);
   header.appendChild(titleBar);
   header.appendChild(actionDiv);
+  header.appendChild(actionDropdownDiv);
   botContainer.appendChild(header);
 
   const section = document.createElement('chatbotSection');
