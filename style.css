@@ -79,7 +79,7 @@
     font-size: 1rem !important;
     line-height: 1.25rem !important;
   }
-  .chatbot-response-message-container{
+  .chatbot-response-message-container {
     width: 90% !important;
   }
 }
@@ -154,12 +154,14 @@ chatbotHeader {
 actionDropdownComponent {
   position: absolute;
   top: 80%;
-  left: -130%;
-  background-color: var(--bg-sky-600);
+  left: -150%;
+  background-color: white;
   justify-content: space-around;
   padding: 10px 10px;
   gap: 10px;
   border-radius: 0.5rem;
+  border-top-right-radius: unset;
+  box-shadow: 5px 5px 20px var(--bg-sky-600);
 }
 
 .chatbot-action chatbotButton {
