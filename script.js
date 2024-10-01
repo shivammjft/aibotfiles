@@ -75,6 +75,15 @@ document.addEventListener('DOMContentLoaded', () => {
   header.appendChild(actionDropdownDiv);
   botContainer.appendChild(header);
 
+  const actionDropdownComponent = document.createElement(
+    'actionDropdownComponent'
+  );
+  actionDropdownComponent.appendChild(minimizeBtn.cloneNode(true));
+  actionDropdownComponent.appendChild(upArrowBtn.cloneNode(true));
+  actionDropdownComponent.appendChild(clearBtn.cloneNode(true));
+  actionDropdownDiv.appendChild(actionDropdownComponent);
+  actionDropdownComponent.style.display = 'none';
+
   const section = document.createElement('chatbotSection');
   const initialGreetings = document.createElement('div');
   initialGreetings.className = 'chatbot-initial-greetings';
@@ -170,31 +179,52 @@ function initializeBot() {
     return;
   }
 
+  const chatbotActionDropdown = document.querySelector(
+    '.chatbot-action-dropdown'
+  );
+  chatbotActionDropdown.addEventListener('click', () => {
+    const changeActionVisibility = document.querySelector(
+      'actionDropdownComponent'
+    );
+    if (changeActionVisibility.style.display === 'none') {
+      changeActionVisibility.style.display = 'flex';
+      chatbotActionDropdown.firstChild.style.rotate = '180deg';
+    } else {
+      changeActionVisibility.style.display = 'none';
+      chatbotActionDropdown.firstChild.style.rotate = '0deg';
+    }
+  });
+
   document.addEventListener('click', (e) => {
     if (!document.querySelector('.chatbot-container').contains(e.target)) {
       document.querySelector('#chatbot-minimize').click();
     }
   });
 
-  queryInput.focus();
-
-  document.querySelector('#chatbot-up-arrow').addEventListener('click', () => {
-    initialMessage.scrollIntoView({ behavior: 'smooth' });
+  document.querySelectorAll('#chatbot-up-arrow').forEach((upArrow) => {
+    upArrow.addEventListener('click', () => {
+      initialMessage.scrollIntoView({ behavior: 'smooth' });
+    });
   });
 
-  document.querySelector('#chatbot-minimize').addEventListener('click', () => {
-    botContainer.style.display = 'none';
-    botButton.removeAttribute('style');
+  document.querySelectorAll('#chatbot-minimize').forEach((minimizeBtn) => {
+    minimizeBtn.addEventListener('click', () => {
+      botContainer.style.display = 'none';
+      botButton.removeAttribute('style');
+    });
   });
 
-  document.querySelector('#chatbot-clear').addEventListener('click', () => {
-    sendEmail(response);
-    clearAllMessages();
+  document.querySelectorAll('#chatbot-clear').forEach((clearBtn) => {
+    clearBtn.addEventListener('click', () => {
+      sendEmail(response);
+      clearAllMessages();
+    });
   });
 
   botButton.addEventListener('click', () => {
     botButton.style.display = 'none';
     botContainer.style.display = 'flex';
+    queryInput.focus();
   });
 
   document
