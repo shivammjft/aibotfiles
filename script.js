@@ -29,9 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
   logoImg.className = 'chatbot-logo';
   const titleContainer = document.createElement('div');
   titleContainer.classList.add('chatbot-company-name');
-  const companyName = document.createElement('h1');
+  const companyName = document.createElement('chatbotH1');
   companyName.textContent = CompanyName;
-  const chatWithContainer = document.createElement('h3');
+  const chatWithContainer = document.createElement('chatbotH3');
   chatWithContainer.textContent = 'Chat with';
   titleBar.appendChild(logoImg);
   titleContainer.appendChild(chatWithContainer);
