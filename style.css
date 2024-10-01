@@ -81,7 +81,7 @@
     line-height: 1.25rem !important;
   }
   .chatbot-response-message-container{
-    width: 90%;
+    width: 90% !important;
   }
 }
 
