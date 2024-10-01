@@ -94,7 +94,6 @@
 
 chatbotHeader {
   display: flex;
-  gap: 8rem;
   justify-content: space-around;
   align-items: center;
   border-top-left-radius: 1rem;
@@ -128,6 +127,7 @@ chatbotHeader {
   line-height: 1.75rem;
   font-weight: 900;
   color: #ffffff;
+  width: max-content;
 }
 
 .chatbot-company-name chatbotH3 {
