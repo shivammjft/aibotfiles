@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('DOM fully loaded and parsed');
   var link = document.createElement('link');
   link.rel = 'stylesheet';
-  link.href = 'style.css';
+  link.href = 'https://aibotfiles.vercel.app/style.css';
 
   document.head.appendChild(link);
 
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const actionDropdownDiv = document.createElement('div');
   actionDropdownDiv.classList = 'chatbot-action-dropdown';
   const actionDropdownImg = document.createElement('img');
-  actionDropdownImg.src = 'expand-arrow.svg';
+  actionDropdownImg.src = 'https://aibotfiles.vercel.app/expand-arrow.svg';
   actionDropdownDiv.appendChild(actionDropdownImg);
   header.appendChild(titleBar);
   header.appendChild(actionDiv);
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
   sendBtn.title = 'Send message';
   const sendImg = document.createElement('img');
   sendImg.classList.add('chatbotImg');
-  sendImg.src = './Vector.svg';
+  sendImg.src = 'https://aibotfiles.vercel.app/Vector.svg';
   sendBtn.appendChild(sendImg);
   sendBtn.type = 'submit';
   form.appendChild(inputText);
@@ -187,14 +187,10 @@ function initializeBot() {
     botButton.removeAttribute('style');
   });
 
-  // window.addEventListener('beforeunload', () => {
-  //   sendEmail(response);
-  // });
-
-  // document.querySelector('#chatbot-clear').addEventListener('click', () => {
-  //   sendEmail(response);
-  //   clearAllMessages();
-  // });
+  document.querySelector('#chatbot-clear').addEventListener('click', () => {
+    sendEmail(response);
+    clearAllMessages();
+  });
 
   botButton.addEventListener('click', () => {
     botButton.style.display = 'none';
