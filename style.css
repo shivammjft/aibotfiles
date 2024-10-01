@@ -164,6 +164,11 @@ actionDropdownComponent {
   box-shadow: 5px 5px 20px var(--bg-sky-600);
 }
 
+actionDropdownComponent img {
+  filter: invert(48%) sepia(62%) saturate(2474%) hue-rotate(169deg)
+    brightness(98%) contrast(102%);
+}
+
 .chatbot-action chatbotButton {
   width: 1.5rem;
   height: 1.5rem;
