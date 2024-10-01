@@ -118,12 +118,10 @@ chatbotHeader {
 }
 
 .chatbot-company-name {
-  all: unset;
   max-height: 60px;
 }
 
 .chatbot-company-name h1 {
-  all: unset;
   font-size: 1.5rem;
   line-height: 1.75rem;
   font-weight: 900;
@@ -131,7 +129,6 @@ chatbotHeader {
 }
 
 .chatbot-company-name h3 {
-  all: unset;
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 500;
