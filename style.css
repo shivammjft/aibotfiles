@@ -53,6 +53,39 @@
   transition: all 0.3s ease;
 }
 
+chatbotIntroPage {
+  align-items: center;
+  justify-content: center;
+}
+
+chatbotIntroPage .chatbot-mascot-image {
+  width: 60%;
+}
+
+chatbotIntroPage chatbotIntroH1{
+  color: var(--bg-sky-600);
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2%;
+}
+
+chatbotIntroPage chatbotIntroH3{
+  margin-bottom: 30%;
+  font-size: 1.5rem;
+  width: 50%;
+  text-align: center;
+  color: grey;
+  font-weight: 500;
+}
+
+chatbotIntroPage .chabot-intro-bg-image {
+  width: 100%;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  position: absolute;
+  bottom: 0;
+}
+
 @media (max-width: 600px) {
   chatbotHeader .chatbot-action {
     display: none;

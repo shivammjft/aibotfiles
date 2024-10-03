@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('DOM fully loaded and parsed');
   var link = document.createElement('link');
   link.rel = 'stylesheet';
-  link.href = 'https://aibotfiles.vercel.app/style.css';
+  link.href = 'style.css';
 
   document.head.appendChild(link);
 
@@ -148,9 +148,32 @@ document.addEventListener('DOMContentLoaded', () => {
   container.appendChild(botButton);
 
   document.body.appendChild(container);
-
+  initializeIntroPage(CompanyBotName);
   initializeBot();
 });
+
+function initializeIntroPage(CompanyBotName) {
+  const botIntroPage = document.querySelector('.chatbot-intro-page');
+
+  const botMascotImg = document.createElement('img');
+  botMascotImg.classList = 'chatbot-mascot-image';
+  botMascotImg.src = 'https://aibotfiles.vercel.app/bot-mascot.png';
+  botIntroPage.appendChild(botMascotImg);
+
+  const botIntroH1 = document.createElement('chatbotIntroH1');
+  botIntroH1.textContent = 'Hello!';
+  botIntroPage.appendChild(botIntroH1);
+
+  const botIntroH3 = document.createElement('chatbotIntroH3');
+  botIntroH3.textContent = `My name is ${CompanyBotName} and I'm here to help you`;
+  botIntroPage.appendChild(botIntroH3);
+
+  const botIntroBg = document.createElement('img');
+  botIntroBg.classList = 'chabot-intro-bg-image';
+  botIntroBg.src = 'https://aibotfiles.vercel.app/bot-intro-page-bg.png';
+  botIntroBg.src = 'bot-intro-page-bg.png';
+  botIntroPage.appendChild(botIntroBg);
+}
 
 function initializeBot() {
   console.log('Initializing bot');
@@ -203,6 +226,7 @@ function initializeBot() {
   document.addEventListener('click', (e) => {
     if (!document.querySelector('.chatbot-container').contains(e.target)) {
       document.querySelector('#chatbot-minimize').click();
+      document.querySelector('.chatbot-intro-page').style.display = 'none';
     }
   });
 
