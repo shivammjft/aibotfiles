@@ -20,6 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
   botContainer.className = 'chatbot-bot-container';
   botContainer.style.display = 'none';
 
+  const botIntroPage = document.createElement('chatbotIntroPage');
+  botIntroPage.className = 'chatbot-intro-page';
+  botIntroPage.style.display = 'none';
+
   const header = document.createElement('chatbotHeader');
   const titleBar = document.createElement('div');
   titleBar.className = 'chatbot-title-bar';
@@ -139,6 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
   botButtonImg.src = 'https://aibotfiles.vercel.app/bot.png';
   botButton.appendChild(botButtonImg);
 
+  container.appendChild(botIntroPage);
   container.appendChild(botContainer);
   container.appendChild(botButton);
 
@@ -223,8 +228,9 @@ function initializeBot() {
 
   botButton.addEventListener('click', () => {
     botButton.style.display = 'none';
-    botContainer.style.display = 'flex';
-    queryInput.focus();
+    // botContainer.style.display = 'flex';
+    // queryInput.focus();
+    document.querySelector('.chatbot-intro-page').style.display = 'flex';
   });
 
   document
