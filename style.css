@@ -117,6 +117,10 @@ chatbotIntroPage .chabot-intro-bg-image {
   chatbotIntroPage chatbotIntroButton {
     font-size: 1rem;
   }
+  .chatbotImg {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
 }
 @media (max-height: 430px) {
   chatbotIntroPage chatbotintroh1 {
@@ -142,6 +146,10 @@ chatbotIntroPage .chabot-intro-bg-image {
   }
   chatbotHeader {
     gap: 4px !important;
+  }
+  .chatbotImg {
+    width: 1rem !important;
+    height: 1rem !important;
   }
 }
 @media (max-width: 540px) {
