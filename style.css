@@ -59,6 +59,7 @@ chatbotIntroPage {
 
 chatbotIntroPage .chatbot-mascot-image {
   width: 60%;
+  z-index: 1;
 }
 
 chatbotIntroPage chatbotIntroH1 {
@@ -66,6 +67,7 @@ chatbotIntroPage chatbotIntroH1 {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 2%;
+  z-index: 1;
 }
 
 chatbotIntroPage chatbotIntroH3 {
@@ -75,10 +77,11 @@ chatbotIntroPage chatbotIntroH3 {
   color: grey;
   font-weight: 500;
   margin-bottom: 4%;
+  z-index: 1;
 }
 
 chatbotIntroPage chatbotIntroButton {
-  margin-bottom: 30%;
+  box-shadow: 5px 5px 20px white;
   padding: 15px 30px;
   background: linear-gradient(180deg, #079cef 0%, #025b8c 100%);
   color: white;
@@ -87,6 +90,11 @@ chatbotIntroPage chatbotIntroButton {
   letter-spacing: 0.025em;
   font-weight: 700;
   cursor: pointer;
+  z-index: 1;
+}
+
+chatbotIntroPage chatbotIntroButton:hover {
+  background: linear-gradient(180deg, #0e85c5 0%, #024061 100%);
 }
 
 chatbotIntroPage .chabot-intro-bg-image {
@@ -95,6 +103,34 @@ chatbotIntroPage .chabot-intro-bg-image {
   border-bottom-right-radius: inherit;
   position: absolute;
   bottom: 0;
+  z-index: 0;
+}
+
+@media (max-height: 540px) {
+  chatbotIntroPage chatbotintroh1 {
+    font-size: 2rem;
+    margin-bottom: 1%;
+  }
+  chatbotIntroPage chatbotintroh3 {
+    font-size: 1rem;
+  }
+  chatbotIntroPage chatbotIntroButton {
+    font-size: 1rem;
+  }
+}
+@media (max-height: 430px) {
+  chatbotIntroPage chatbotintroh1 {
+    font-size: 1.2rem;
+    margin-bottom: 1%;
+  }
+  chatbotIntroPage chatbotintroh3 {
+    font-size: 0.7rem;
+    width: 80%;
+  }
+  chatbotIntroPage chatbotIntroButton {
+    font-size: 0.7rem;
+    padding: 5px 10px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -108,7 +144,6 @@ chatbotIntroPage .chabot-intro-bg-image {
     gap: 4px !important;
   }
 }
-
 @media (max-width: 540px) {
   .chatbot-container {
     font-size: 14px;
@@ -128,7 +163,6 @@ chatbotIntroPage .chabot-intro-bg-image {
     width: 90% !important;
   }
 }
-
 @media (max-width: 360px) {
   .chatbot-container {
     font-size: 12px;
