@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('DOM fully loaded and parsed');
   var link = document.createElement('link');
   link.rel = 'stylesheet';
-  link.href = 'style.css';
+  link.href = 'https://aibotfiles.vercel.app/style.css';
 
   document.head.appendChild(link);
 
@@ -154,6 +154,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initializeIntroPage(CompanyBotName) {
   const botIntroPage = document.querySelector('.chatbot-intro-page');
+  const botContainer = document.querySelector('.chatbot-bot-container');
+  const queryInput = document.querySelector('#chatbot-input-query');
 
   const botMascotImg = document.createElement('img');
   botMascotImg.classList = 'chatbot-mascot-image';
@@ -171,8 +173,17 @@ function initializeIntroPage(CompanyBotName) {
   const botIntroBg = document.createElement('img');
   botIntroBg.classList = 'chabot-intro-bg-image';
   botIntroBg.src = 'https://aibotfiles.vercel.app/bot-intro-page-bg.png';
-  botIntroBg.src = 'bot-intro-page-bg.png';
   botIntroPage.appendChild(botIntroBg);
+
+  const botIntroButton = document.createElement('chatbotIntroButton');
+  botIntroButton.textContent = 'Ask Jelly';
+  botIntroPage.appendChild(botIntroButton);
+
+  botIntroButton.addEventListener('click', () => {
+    botIntroPage.style.display = 'none';
+    botContainer.style.display = 'flex';
+    queryInput.focus();
+  });
 }
 
 function initializeBot() {
@@ -252,8 +263,6 @@ function initializeBot() {
 
   botButton.addEventListener('click', () => {
     botButton.style.display = 'none';
-    // botContainer.style.display = 'flex';
-    // queryInput.focus();
     document.querySelector('.chatbot-intro-page').style.display = 'flex';
   });
 

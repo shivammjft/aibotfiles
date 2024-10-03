@@ -62,20 +62,32 @@ chatbotIntroPage .chatbot-mascot-image {
   width: 60%;
 }
 
-chatbotIntroPage chatbotIntroH1{
+chatbotIntroPage chatbotIntroH1 {
   color: var(--bg-sky-600);
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 2%;
 }
 
-chatbotIntroPage chatbotIntroH3{
-  margin-bottom: 30%;
+chatbotIntroPage chatbotIntroH3 {
   font-size: 1.5rem;
   width: 50%;
   text-align: center;
   color: grey;
   font-weight: 500;
+  margin-bottom: 4%;
+}
+
+chatbotIntroPage chatbotIntroButton {
+  margin-bottom: 30%;
+  padding: 15px 30px;
+  background: linear-gradient(180deg, #079cef 0%, #025b8c 100%);
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  letter-spacing: 0.025em;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 chatbotIntroPage .chabot-intro-bg-image {
