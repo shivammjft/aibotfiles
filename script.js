@@ -155,12 +155,17 @@ document.addEventListener('DOMContentLoaded', () => {
 function initializeIntroPage(CompanyBotName) {
   const botIntroPage = document.querySelector('.chatbot-intro-page');
   const botContainer = document.querySelector('.chatbot-bot-container');
+  const botButton = document.querySelector('.chatbot-bot-button');
   const queryInput = document.querySelector('#chatbot-input-query');
 
   const botIntroMinimize = document.createElement('botIntroMinimize');
   const botIntroMinimizeImg = document.createElement('img');
   botIntroMinimizeImg.classList = 'chatbotImg';
   botIntroMinimizeImg.src = 'https://aibotfiles.vercel.app/minus.png';
+  botIntroMinimizeImg.addEventListener('click', () => {
+    botIntroPage.style.display = 'none';
+    botButton.style.display = 'flex';
+  });
   botIntroMinimize.appendChild(botIntroMinimizeImg);
   botIntroPage.appendChild(botIntroMinimize);
 
