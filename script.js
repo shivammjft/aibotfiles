@@ -161,7 +161,7 @@ function initializeIntroPage(CompanyBotName) {
   const botIntroMinimize = document.createElement('botIntroMinimize');
   const botIntroMinimizeImg = document.createElement('img');
   botIntroMinimizeImg.classList = 'chatbotImg';
-  botIntroMinimizeImg.src = 'https://aibotfiles.vercel.app/minus.png';
+  botIntroMinimizeImg.src = 'https://aibotfiles.vercel.app/cancel.png';
   botIntroMinimizeImg.addEventListener('click', () => {
     botIntroPage.style.display = 'none';
     botButton.style.display = 'flex';
