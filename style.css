@@ -144,8 +144,8 @@ chatbotIntroPage .chabot-intro-bg-image {
   }
   .chatbot-bot-button img {
     position: relative;
-    bottom: 20px !important;
-    right: 20px !important;
+    bottom: 10px !important;
+    right: 10px !important;
   }
   .chatbot-bot-container,
   .chatbot-intro-page {
