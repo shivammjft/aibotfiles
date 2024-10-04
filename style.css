@@ -46,7 +46,7 @@
   max-width: 540px;
   max-height: 750px;
   width: 70dvw;
-  height: 80lvh;
+  height: 80dvh;
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow-outer);
   transition: all 0.3s ease;
@@ -151,7 +151,7 @@ chatbotIntroPage .chabot-intro-bg-image {
   .chatbot-intro-page {
     max-height: unset !important;
     max-width: unset !important;
-    height: 100lvh;
+    height: 100dvh;
     width: 100dvw;
     border-radius: unset !important;
   }
