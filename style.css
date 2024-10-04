@@ -182,13 +182,6 @@ chatbotIntroPage .chabot-intro-bg-image {
     width: 90% !important;
   }
 }
-@media (max-width: 360px) {
-  .chatbot-container {
-    font-size: 12px;
-    bottom: 10px;
-    right: 10px;
-  }
-}
 
 chatbotHeader {
   display: flex;
