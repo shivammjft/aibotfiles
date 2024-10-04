@@ -12,10 +12,6 @@
   --bg-sky-600: rgb(2 132 199 / var(--tw-bg-opacity));
 }
 
-body.no-scroll {
-  overflow: hidden;
-}
-
 .chatbot-container {
   font-family: inherit;
   position: fixed;
