@@ -55,7 +55,7 @@
 chatbotIntroPage {
   align-items: center;
   justify-content: center;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 chatbotIntroPage .chatbot-mascot-image {
