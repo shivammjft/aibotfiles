@@ -12,10 +12,6 @@
   --bg-sky-600: rgb(2 132 199 / var(--tw-bg-opacity));
 }
 
-html.no-scroll {
-  overflow: hidden;
-}
-
 .chatbot-container {
   font-family: inherit;
   position: fixed;
@@ -142,6 +138,9 @@ chatbotIntroPage .chabot-intro-bg-image {
 }
 
 @media (max-width: 600px) {
+  html.no-scroll {
+    overflow: hidden;
+  }
   .chatbot-container {
     bottom: 0;
     right: 0;
