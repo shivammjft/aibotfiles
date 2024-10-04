@@ -165,6 +165,7 @@ function initializeIntroPage(CompanyBotName) {
   botIntroMinimizeImg.addEventListener('click', () => {
     botIntroPage.style.display = 'none';
     botButton.style.display = 'flex';
+    document.body.classList.remove('no-scroll');
   });
   botIntroMinimize.appendChild(botIntroMinimizeImg);
   botIntroPage.appendChild(botIntroMinimize);
@@ -263,6 +264,7 @@ function initializeBot() {
     minimizeBtn.addEventListener('click', () => {
       botContainer.style.display = 'none';
       botButton.removeAttribute('style');
+      document.body.classList.remove('no-scroll');
     });
   });
 
@@ -276,6 +278,7 @@ function initializeBot() {
   botButton.addEventListener('click', () => {
     botButton.style.display = 'none';
     document.querySelector('.chatbot-intro-page').style.display = 'flex';
+    document.body.classList.add('no-scroll');
   });
 
   document
