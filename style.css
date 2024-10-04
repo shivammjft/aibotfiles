@@ -138,6 +138,23 @@ chatbotIntroPage .chabot-intro-bg-image {
 }
 
 @media (max-width: 600px) {
+  .chatbot-container {
+    bottom: 0;
+    right: 0;
+  }
+  .chatbot-bot-button img {
+    position: relative;
+    bottom: 20px !important;
+    right: 20px !important;
+  }
+  .chatbot-bot-container,
+  .chatbot-intro-page {
+    max-height: unset !important;
+    max-width: unset !important;
+    height: 100dvh;
+    width: 100dvw;
+    border-radius: unset !important;
+  }
   chatbotHeader .chatbot-action {
     display: none;
   }
@@ -147,16 +164,10 @@ chatbotIntroPage .chabot-intro-bg-image {
   chatbotHeader {
     gap: 4px !important;
   }
-  .chatbotImg {
-    width: 1rem !important;
-    height: 1rem !important;
-  }
 }
 @media (max-width: 540px) {
   .chatbot-container {
     font-size: 14px;
-    bottom: 20px;
-    right: 20px;
   }
   .chatbot-company-name chatbotH1 {
     width: unset !important;
@@ -183,8 +194,8 @@ chatbotHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
   width: 100%;
   height: 90px;
   background: linear-gradient(180deg, #079cef 0%, #025b8c 100%);
