@@ -51,8 +51,6 @@
   flex-direction: column;
   border-radius: 1rem;
   background-color: #ffffff;
-  /* max-width: 540px;
-  max-height: 750px; */
   width: 100%;
   height: auto;
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
@@ -75,7 +73,6 @@ chatbotIntroPage {
 
 chatbotIntroPage .chatbot-mascot-image {
   width: 60%;
-  /* z-index: 1; */
 }
 
 chatbotIntroPage chatbotIntroH1 {
@@ -83,7 +80,6 @@ chatbotIntroPage chatbotIntroH1 {
   font-size: 2.25rem;
   font-weight: 700;
   margin-bottom: 2%;
-  /* z-index: 1; */
 }
 
 chatbotIntroPage chatbotIntroH3 {
@@ -93,7 +89,6 @@ chatbotIntroPage chatbotIntroH3 {
   color: #777777;
   font-weight: 500;
   margin-bottom: 4%;
-  /* z-index: 1; */
 }
 
 chatbotIntroPage chatbotIntroButton {
@@ -106,7 +101,6 @@ chatbotIntroPage chatbotIntroButton {
   letter-spacing: 0.025em;
   font-weight: 700;
   cursor: pointer;
-  /* z-index: 1; */
 }
 
 chatbotIntroPage chatbotIntroButton:hover {
@@ -241,7 +235,6 @@ chatbotHeader {
 
 .chatbot-company-name chatbotH1 {
   font-size: 1rem;
-  /* line-height: 1.75rem; */
   font-weight: 900;
   color: #ffffff;
   width: max-content;
@@ -257,7 +250,6 @@ chatbotHeader {
 .chatbot-action {
   display: flex;
   margin-top: 1rem;
-  /* margin-bottom: 1rem; */
   gap: 0.5rem;
   margin-right: 0.5rem;
   position: absolute;
@@ -305,11 +297,6 @@ actionDropdownComponent img {
     brightness(98%) contrast(102%);
 }
 
-.chatbot-action chatbotButton {
-  /* width: 1.5rem;
-  height: 1.5rem; */
-}
-
 .chatbotImg {
   width: 1.5rem;
   height: 1.5rem;
@@ -350,7 +337,6 @@ chatbotSection {
   width: 100%;
   min-height: 25vh;
   max-height: 50vh;
-  /* font-size: 1.2rem; */
   background-color: rgb(245, 245, 245);
 }
 
@@ -374,9 +360,6 @@ chatbotSection {
   font-size: 0.8rem;
   padding: 1rem;
   line-height: 125%;
-  /* line-height: 24px; */
-  /* padding-left: 1.5rem;
-  padding-right: 1.5rem; */
   border-radius: 0.8rem;
   border-bottom-left-radius: unset;
   background-color: #ffffff;
@@ -439,8 +422,6 @@ chatbotSection {
   flex-direction: column;
   white-space: pre-wrap;
   padding: 1rem;
-  /* padding-left: 1.5rem;
-  padding-right: 1.5rem; */
   border-radius: 0.8rem;
   border-bottom-left-radius: unset;
   background-color: #ffffff;
@@ -461,8 +442,6 @@ chatbotSection {
   line-height: 120%;
   display: flex;
   padding: 1rem;
-  /* padding-left: 1.5rem;
-  padding-right: 1.5rem; */
   border-radius: 0.8rem;
   border-bottom-right-radius: unset;
   background: linear-gradient(90deg, #079cef 0%, #025b8c 100%);
