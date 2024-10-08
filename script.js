@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('DOM fully loaded and parsed');
   var link = document.createElement('link');
   link.rel = 'stylesheet';
-  link.href = 'style.css';
+  link.href = 'https://aibotfiles.vercel.app/style.css';
 
   document.head.appendChild(link);
 
