@@ -132,6 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const poweredBy = document.createElement('div');
   poweredBy.innerHTML = '<span>&copy;</span> Powered by Jellyfish Technologies';
   footer.appendChild(form);
+  footer.appendChild(hr.cloneNode());
   footer.appendChild(poweredBy);
   botContainer.appendChild(hr);
   botContainer.appendChild(footer);
