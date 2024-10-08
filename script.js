@@ -282,11 +282,10 @@ function initializeBot() {
 
   botButton.addEventListener('click', () => {
     botButton.style.display = 'none';
-    if (minimized) botContainer.style.display = 'flex';
-    else {
-      document.querySelector('.chatbot-intro-page').style.display = 'flex';
+    if (minimized) {
+      botContainer.style.display = 'flex';
       queryInput.focus();
-    }
+    } else document.querySelector('.chatbot-intro-page').style.display = 'flex';
     document.querySelector('html').classList.add('no-scroll');
   });
 
