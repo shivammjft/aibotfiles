@@ -157,9 +157,14 @@ chatbotIntroPage .chabot-intro-bg-image {
   html.no-scroll {
     overflow: hidden;
   }
+  chatbotSection {
+    min-height: 60vh !important;
+    max-height: 100% !important;
+  }
   .chatbot-container {
     bottom: 0;
     right: 0;
+    width: 100%;
   }
   .chatbot-bot-button img {
     position: relative;
