@@ -1,4 +1,5 @@
 let chatbotKey;
+let minimized = false;
 document.addEventListener('DOMContentLoaded', () => {
   console.log('DOM fully loaded and parsed');
   var link = document.createElement('link');
@@ -263,6 +264,7 @@ function initializeBot() {
 
   document.querySelectorAll('#chatbot-minimize').forEach((minimizeBtn) => {
     minimizeBtn.addEventListener('click', () => {
+      minimized = true;
       botContainer.style.display = 'none';
       botButton.removeAttribute('style');
       document.querySelector('html').classList.remove('no-scroll');
@@ -271,6 +273,7 @@ function initializeBot() {
 
   document.querySelectorAll('#chatbot-clear').forEach((clearBtn) => {
     clearBtn.addEventListener('click', () => {
+      minimized = true;
       sendEmail(response);
       clearAllMessages();
       document.querySelector('html').classList.remove('no-scroll');
@@ -279,7 +282,11 @@ function initializeBot() {
 
   botButton.addEventListener('click', () => {
     botButton.style.display = 'none';
-    document.querySelector('.chatbot-intro-page').style.display = 'flex';
+    if (minimized) botContainer.style.display = 'flex';
+    else {
+      document.querySelector('.chatbot-intro-page').style.display = 'flex';
+      queryInput.focus();
+    }
     document.querySelector('html').classList.add('no-scroll');
   });
 
