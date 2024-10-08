@@ -260,6 +260,10 @@ chatbotHeader {
   top: 0;
 }
 
+.chatbot-action img {
+  width: 1.1rem;
+}
+
 .chatbot-action-dropdown {
   display: none;
   cursor: pointer;
@@ -339,6 +343,8 @@ chatbotSection {
   flex: 1 1 0%;
   gap: 1rem;
   width: 100%;
+  min-height: 20vh;
+  max-height: 50vh;
   /* font-size: 1.2rem; */
   background-color: rgb(245, 245, 245);
 }
@@ -360,7 +366,7 @@ chatbotSection {
 
 .chatbot-initial-message {
   display: flex;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   padding: 1rem;
   line-height: 125%;
   /* line-height: 24px; */
@@ -407,7 +413,7 @@ chatbotSection {
   gap: 0.5rem;
   justify-content: flex-start;
   align-self: flex-start;
-  width: 80%;
+  width: 90%;
 }
 
 .chatbot-user-message-container {
@@ -416,18 +422,20 @@ chatbotSection {
   gap: 0.5rem;
   justify-content: flex-end;
   align-self: flex-end;
-  width: 80%;
+  width: 90%;
 }
 
 .chatbot-response-message,
 .chatbot-error-message {
+  font-size: .8rem;
+  line-height: 120%;
   display: flex;
   flex-direction: column;
   white-space: pre-wrap;
   padding: 1rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  border-radius: 1rem;
+  /* padding-left: 1.5rem;
+  padding-right: 1.5rem; */
+  border-radius: 0.8rem;
   border-bottom-left-radius: unset;
   line-height: 24px;
   background-color: #ffffff;
@@ -443,11 +451,13 @@ chatbotSection {
 }
 
 .chatbot-user-message {
+  font-size: .8rem;
+  line-height: 120%;
   display: flex;
   padding: 1rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  border-radius: 1rem;
+  /* padding-left: 1.5rem;
+  padding-right: 1.5rem; */
+  border-radius: 0.8rem;
   border-bottom-right-radius: unset;
   line-height: 24px;
   background: linear-gradient(90deg, #079cef 0%, #025b8c 100%);
@@ -469,7 +479,8 @@ chatbotSection {
 
 .chatbot-bot-container footer div {
   color: rgb(161, 161, 161);
-  font-size: 14px;
+  font-size: 12px;
+  padding: 4px;
 }
 
 .chatbot-bot-container footer div span {
@@ -482,7 +493,7 @@ chatbotSection {
   width: 100%;
   padding-left: 2rem;
   padding-right: 2rem;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
 
