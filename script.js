@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('DOM fully loaded and parsed');
   var link = document.createElement('link');
   link.rel = 'stylesheet';
-  link.href = 'https://aibotfiles.vercel.app/style.css';
+  link.href = 'style.css';
 
   document.head.appendChild(link);
 
@@ -183,10 +183,10 @@ function initializeIntroPage(CompanyBotName) {
   botIntroH3.textContent = `My name is ${CompanyBotName} and I'm here to help you`;
   botIntroPage.appendChild(botIntroH3);
 
-  const botIntroBg = document.createElement('img');
-  botIntroBg.classList = 'chabot-intro-bg-image';
-  botIntroBg.src = 'https://aibotfiles.vercel.app/bot-intro-page-bg.png';
-  botIntroPage.appendChild(botIntroBg);
+  // const botIntroBg = document.createElement('img');
+  // botIntroBg.classList = 'chabot-intro-bg-image';
+  // botIntroBg.src = 'https://aibotfiles.vercel.app/bot-intro-page-bg.png';
+  // botIntroPage.appendChild(botIntroBg);
 
   const botIntroButton = document.createElement('chatbotIntroButton');
   botIntroButton.textContent = 'Ask Jelly';

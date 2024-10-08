@@ -13,12 +13,17 @@
 }
 
 .chatbot-container {
-  font-family: inherit;
+  /* font-family: inherit; */
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   position: fixed;
-  bottom: 40px;
-  right: 40px;
+  bottom: 10px;
+  right: 0px;
   user-select: none;
   z-index: 20000000000000;
+  width: 25%;
+  height: auto;
 }
 
 .chatbot-container > chatbotButton {
@@ -43,10 +48,11 @@
   flex-direction: column;
   border-radius: 1rem;
   background-color: #ffffff;
-  max-width: 540px;
-  max-height: 750px;
-  width: 70dvw;
-  height: 80dvh;
+  /* max-width: 540px;
+  max-height: 750px; */
+  width: 100%;
+  height: auto;
+  padding: 15% 10% 40% 10%;
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow-outer);
   transition: all 0.3s ease;
@@ -55,42 +61,46 @@
 chatbotIntroPage {
   align-items: center;
   justify-content: center;
+  background-image: url('https://aibotfiles.vercel.app/bot-intro-page-bg.png');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100%;
 }
 
 chatbotIntroPage .chatbot-mascot-image {
   width: 60%;
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 chatbotIntroPage chatbotIntroH1 {
   color: var(--bg-sky-600);
-  font-size: 3rem;
+  font-size: 2.25rem;
   font-weight: 700;
   margin-bottom: 2%;
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 chatbotIntroPage chatbotIntroH3 {
-  font-size: 1.5rem;
-  width: 50%;
+  line-height: 120%;
+  font-size: 1.25rem;
   text-align: center;
-  color: grey;
+  color: #777777;
   font-weight: 500;
   margin-bottom: 4%;
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 chatbotIntroPage chatbotIntroButton {
   box-shadow: 5px 5px 20px white;
-  padding: 15px 30px;
-  background: linear-gradient(180deg, #079cef 0%, #025b8c 100%);
+  padding: 12px 24px;
+  background: linear-gradient(90deg, #079cef 0%, #025b8c 100%);
   color: white;
-  font-size: 1.5rem;
+  font-size: 1rem;
   border-radius: 5px;
   letter-spacing: 0.025em;
   font-weight: 700;
   cursor: pointer;
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 chatbotIntroPage chatbotIntroButton:hover {
