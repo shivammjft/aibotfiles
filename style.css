@@ -16,7 +16,7 @@
   font-family: inherit;
   position: fixed;
   bottom: 5px;
-  right: 5px;
+  left: 5px;
   user-select: none;
   z-index: 20000000000000;
   width: 25%;
@@ -37,8 +37,8 @@
 
 .chatbot-bot-button {
   position: fixed;
-  right: 1%;
-  bottom: 10%;
+  left: 1%;
+  bottom: 1%;
 }
 
 .chatbot-bot-button img {
@@ -157,13 +157,13 @@ chatbotIntroPage .chabot-intro-bg-image {
   }
   .chatbot-container {
     bottom: 0;
-    right: 0;
+    left: 0;
     width: 100%;
   }
   .chatbot-bot-button img {
     position: relative;
     bottom: 10px !important;
-    right: 10px !important;
+    left: 10px !important;
   }
   .chatbot-bot-container,
   .chatbot-intro-page {
