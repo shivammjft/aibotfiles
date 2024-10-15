@@ -246,8 +246,8 @@ function initializeBot() {
       localStorage.setItem('tempChatHistory', JSON.stringify(newChatHistory));
     } else {
       const { history, timestamp } = JSON.parse(tempChatHistory);
-      const dateConditionPasses = timestamp ? dateCompare(timestamp) : true;
-      if (!dateConditionPasses) {
+      const dateConditionPasses = timestamp ? dateCompare(timestamp) : false;
+      if (dateConditionPasses) {
         sendEmail(history);
         localStorage.removeItem('tempChatHistory');
         minimized = false;
