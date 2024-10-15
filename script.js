@@ -201,6 +201,18 @@ function initializeIntroPage(CompanyBotName) {
   });
 }
 
+function dateCompare(pastDate) {
+  const currentDate = new Date();
+
+  const diffInMs = currentDate - pastDate;
+  const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
+  const diffInHours = Math.floor(
+    (diffInMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+
+  return diffInDays > 0 || (diffInDays === 0 && diffInHours > 1);
+}
+
 function initializeBot() {
   console.log('Initializing bot');
 
@@ -226,26 +238,26 @@ function initializeBot() {
   (function () {
     const tempChatHistory = localStorage.getItem('tempChatHistory');
 
-    if (!tempChatHistory) {
+    if (!tempChatHistory?.length) {
       const newChatHistory = {
         history: [],
-        timestamp: Date.now(),
+        timestamp: '',
       };
       localStorage.setItem('tempChatHistory', JSON.stringify(newChatHistory));
-      return;
-    }
-
-    const { history, timestamp } = JSON.parse(tempChatHistory);
-    if ((Date.now() - timestamp) / 1000 > 3600) {
-      sendEmail(history);
-      localStorage.removeItem('tempChatHistory');
-      minimized = false;
     } else {
-      history.forEach(({ id, message }) => {
-        createResponseElements(message, id === 'user' ? 'query' : 'data');
-      });
-      response = history;
-      minimized = true;
+      const { history, timestamp } = JSON.parse(tempChatHistory);
+      const dateConditionPasses = timestamp ? dateCompare(timestamp) : true;
+      if (!dateConditionPasses) {
+        sendEmail(history);
+        localStorage.removeItem('tempChatHistory');
+        minimized = false;
+      } else {
+        history.forEach(({ id, message }) => {
+          createResponseElements(message, id === 'user' ? 'query' : 'data');
+        });
+        response = history;
+        minimized = true;
+      }
     }
   })();
   if (!queryInput) {
@@ -457,6 +469,7 @@ function initializeBot() {
     }
     response.push({ id: 'user', message: query });
     response.push({ id: 'bot', message: data });
+    saveChatHistory();
     createResponseElements(data, 'data');
   }
 
@@ -508,13 +521,11 @@ function initializeBot() {
   }
 
   function saveChatHistory() {
+    if (!response) return;
     const chatHistory = {
       history: response,
-      timestamp: Date.now(),
+      timestamp: new Date(),
     };
     localStorage.setItem('tempChatHistory', JSON.stringify(chatHistory));
   }
-  window.addEventListener('beforeunload', () => {
-    saveChatHistory();
-  });
 }
