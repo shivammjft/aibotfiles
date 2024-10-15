@@ -239,11 +239,13 @@ function initializeBot() {
     if ((Date.now() - timestamp) / 1000 > 3600) {
       sendEmail(history);
       localStorage.removeItem('tempChatHistory');
+      minimized = false;
     } else {
       history.forEach(({ id, message }) => {
         createResponseElements(message, id === 'user' ? 'query' : 'data');
       });
       response = history;
+      minimized = true;
     }
   })();
   if (!queryInput) {
@@ -307,6 +309,10 @@ function initializeBot() {
     if (minimized) {
       botContainer.style.display = 'flex';
       queryInput.focus();
+      responseSection.scrollTo({
+        top: responseSection.scrollHeight,
+        behavior: 'smooth',
+      });
     } else document.querySelector('.chatbot-intro-page').style.display = 'flex';
     document.querySelector('html').classList.add('no-scroll');
   });
