@@ -223,7 +223,29 @@ function initializeBot() {
   const userAvatar = document.createElement('img');
   userAvatar.classList.add('chatbotImg');
   userAvatar.setAttribute('src', 'https://aibotfiles.vercel.app/user.png');
+  (function () {
+    const tempChatHistory = localStorage.getItem('tempChatHistory');
 
+    if (!tempChatHistory) {
+      const newChatHistory = {
+        history: [],
+        timestamp: Date.now(),
+      };
+      localStorage.setItem('tempChatHistory', JSON.stringify(newChatHistory));
+      return;
+    }
+
+    const { history, timestamp } = JSON.parse(tempChatHistory);
+    if ((Date.now() - timestamp) / 1000 > 3600) {
+      sendEmail(history);
+      localStorage.removeItem('tempChatHistory');
+    } else {
+      history.forEach(({ id, message }) => {
+        createResponseElements(message, id === 'user' ? 'query' : 'data');
+      });
+      response = history;
+    }
+  })();
   if (!queryInput) {
     console.error('Query input not found');
     return;
@@ -427,8 +449,8 @@ function initializeBot() {
       );
       return;
     }
-    response.push(query);
-    response.push(data);
+    response.push({ id: 'user', message: query });
+    response.push({ id: 'bot', message: data });
     createResponseElements(data, 'data');
   }
 
@@ -478,4 +500,15 @@ function initializeBot() {
   function stopLoadingResponseAnimation() {
     responseSection.removeChild(responseSection.lastChild);
   }
+
+  function saveChatHistory() {
+    const chatHistory = {
+      history: response,
+      timestamp: Date.now(),
+    };
+    localStorage.setItem('tempChatHistory', JSON.stringify(chatHistory));
+  }
+  window.addEventListener('beforeunload', () => {
+    saveChatHistory();
+  });
 }
