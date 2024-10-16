@@ -236,12 +236,12 @@ function initializeBot() {
   userAvatar.classList.add('chatbotImg');
   userAvatar.setAttribute('src', 'https://aibotfiles.vercel.app/user.png');
   (function () {
-    const tempChatHistory = sessionStorage.getItem('tempChatHistory');
+    let tempChatHistory = sessionStorage.getItem('tempChatHistory');
     if (!tempChatHistory) {
       const newChatHistory = [];
       sessionStorage.setItem('tempChatHistory', JSON.stringify(newChatHistory));
     } else {
-      const tempChatHistory = JSON.parse(tempChatHistory);
+      tempChatHistory = JSON.parse(tempChatHistory);
       tempChatHistory.forEach(({ id, message }) => {
         createResponseElements(message, id === 'user' ? 'query' : 'data');
       });
