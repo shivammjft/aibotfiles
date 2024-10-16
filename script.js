@@ -234,10 +234,6 @@ function initializeBot() {
     const tempChatHistory = sessionStorage.getItem('tempChatHistory');
 
     if (!tempChatHistory?.length) {
-      // const newChatHistory = {
-      //   history: [],
-      //   timestamp: '',
-      // };
       sessionStorage.setItem('tempChatHistory', JSON.stringify([]));
     } else {
       const history = JSON.parse(tempChatHistory);
@@ -510,10 +506,6 @@ function initializeBot() {
 
   function saveChatHistory() {
     if (!response) return;
-    // const chatHistory = {
-    //   history: response,
-    //   timestamp: new Date(),
-    // };
     sessionStorage.setItem('tempChatHistory', JSON.stringify(response));
   }
 }
