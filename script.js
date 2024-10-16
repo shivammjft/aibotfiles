@@ -234,13 +234,13 @@ function initializeBot() {
     const tempChatHistory = sessionStorage.getItem('tempChatHistory');
 
     if (!tempChatHistory?.length) {
-      const newChatHistory = {
-        history: [],
-        timestamp: '',
-      };
-      sessionStorage.setItem('tempChatHistory', JSON.stringify(newChatHistory));
+      // const newChatHistory = {
+      //   history: [],
+      //   timestamp: '',
+      // };
+      sessionStorage.setItem('tempChatHistory', JSON.stringify([]));
     } else {
-      const { history } = JSON.parse(tempChatHistory);
+      const history = JSON.parse(tempChatHistory);
       history.forEach(({ id, message }) => {
         createResponseElements(message, id === 'user' ? 'query' : 'data');
       });
@@ -510,10 +510,10 @@ function initializeBot() {
 
   function saveChatHistory() {
     if (!response) return;
-    const chatHistory = {
-      history: response,
-      timestamp: new Date(),
-    };
-    sessionStorage.setItem('tempChatHistory', JSON.stringify(chatHistory));
+    // const chatHistory = {
+    //   history: response,
+    //   timestamp: new Date(),
+    // };
+    sessionStorage.setItem('tempChatHistory', JSON.stringify(response));
   }
 }
