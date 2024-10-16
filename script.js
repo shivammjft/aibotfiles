@@ -196,18 +196,6 @@ function initializeIntroPage(CompanyBotName) {
   });
 }
 
-function dateCompare(pastDate) {
-  const currentDate = new Date();
-
-  const diffInMs = currentDate - pastDate;
-  const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
-  const diffInHours = Math.floor(
-    (diffInMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-  );
-
-  return diffInDays > 0 || (diffInDays === 0 && diffInHours > 1);
-}
-
 function initializeBot() {
   console.log('Initializing bot');
 
