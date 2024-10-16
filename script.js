@@ -519,6 +519,6 @@ function initializeBot() {
       history: response,
       timestamp: new Date(),
     };
-    localStorage.setItem('tempChatHistory', JSON.stringify(chatHistory));
+    sessionStorage.setItem('tempChatHistory', JSON.stringify(chatHistory));
   }
 }
