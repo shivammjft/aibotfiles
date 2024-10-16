@@ -236,28 +236,17 @@ function initializeBot() {
   userAvatar.classList.add('chatbotImg');
   userAvatar.setAttribute('src', 'https://aibotfiles.vercel.app/user.png');
   (function () {
-    const tempChatHistory = localStorage.getItem('tempChatHistory');
-
-    if (!tempChatHistory?.length) {
-      const newChatHistory = {
-        history: [],
-        timestamp: '',
-      };
-      localStorage.setItem('tempChatHistory', JSON.stringify(newChatHistory));
+    const tempChatHistory = sessionStorage.getItem('tempChatHistory');
+    if (!tempChatHistory) {
+      const newChatHistory = [];
+      sessionStorage.setItem('tempChatHistory', JSON.stringify(newChatHistory));
     } else {
-      const { history, timestamp } = JSON.parse(tempChatHistory);
-      const dateConditionPasses = timestamp ? dateCompare(timestamp) : false;
-      if (dateConditionPasses) {
-        sendEmail(history);
-        localStorage.removeItem('tempChatHistory');
-        minimized = false;
-      } else {
-        history.forEach(({ id, message }) => {
-          createResponseElements(message, id === 'user' ? 'query' : 'data');
-        });
-        response = history;
-        minimized = true;
-      }
+      const tempChatHistory = JSON.parse(tempChatHistory);
+      tempChatHistory.forEach(({ id, message }) => {
+        createResponseElements(message, id === 'user' ? 'query' : 'data');
+      });
+      response = history;
+      minimized = true;
     }
   })();
   if (!queryInput) {
@@ -522,10 +511,6 @@ function initializeBot() {
 
   function saveChatHistory() {
     if (!response) return;
-    const chatHistory = {
-      history: response,
-      timestamp: new Date(),
-    };
-    localStorage.setItem('tempChatHistory', JSON.stringify(chatHistory));
+    sessionStorage.setItem('tempChatHistory', JSON.stringify(response));
   }
 }
