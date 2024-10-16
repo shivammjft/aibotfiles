@@ -185,11 +185,6 @@ function initializeIntroPage(CompanyBotName) {
   botIntroH3.textContent = `My name is ${CompanyBotName} and I'm here to help you`;
   botIntroPage.appendChild(botIntroH3);
 
-  // const botIntroBg = document.createElement('img');
-  // botIntroBg.classList = 'chabot-intro-bg-image';
-  // botIntroBg.src = 'https://aibotfiles.vercel.app/bot-intro-page-bg.png';
-  // botIntroPage.appendChild(botIntroBg);
-
   const botIntroButton = document.createElement('chatbotIntroButton');
   botIntroButton.textContent = 'Ask Jelly';
   botIntroPage.appendChild(botIntroButton);
@@ -245,7 +240,7 @@ function initializeBot() {
       tempChatHistory.forEach(({ id, message }) => {
         createResponseElements(message, id === 'user' ? 'query' : 'data');
       });
-      response = history;
+      response = tempChatHistory;
       minimized = true;
     }
   })();
