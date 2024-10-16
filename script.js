@@ -185,6 +185,11 @@ function initializeIntroPage(CompanyBotName) {
   botIntroH3.textContent = `My name is ${CompanyBotName} and I'm here to help you`;
   botIntroPage.appendChild(botIntroH3);
 
+  // const botIntroBg = document.createElement('img');
+  // botIntroBg.classList = 'chabot-intro-bg-image';
+  // botIntroBg.src = 'https://aibotfiles.vercel.app/bot-intro-page-bg.png';
+  // botIntroPage.appendChild(botIntroBg);
+
   const botIntroButton = document.createElement('chatbotIntroButton');
   botIntroButton.textContent = 'Ask Jelly';
   botIntroPage.appendChild(botIntroButton);
@@ -231,16 +236,20 @@ function initializeBot() {
   userAvatar.classList.add('chatbotImg');
   userAvatar.setAttribute('src', 'https://aibotfiles.vercel.app/user.png');
   (function () {
-    let tempChatHistory = sessionStorage.getItem('tempChatHistory');
-    if (!tempChatHistory) {
-      const newChatHistory = [];
+    const tempChatHistory = sessionStorage.getItem('tempChatHistory');
+
+    if (!tempChatHistory?.length) {
+      const newChatHistory = {
+        history: [],
+        timestamp: '',
+      };
       sessionStorage.setItem('tempChatHistory', JSON.stringify(newChatHistory));
     } else {
-      tempChatHistory = JSON.parse(tempChatHistory);
-      tempChatHistory.forEach(({ id, message }) => {
+      const { history } = JSON.parse(tempChatHistory);
+      history.forEach(({ id, message }) => {
         createResponseElements(message, id === 'user' ? 'query' : 'data');
       });
-      response = tempChatHistory;
+      response = history;
       minimized = true;
     }
   })();
@@ -506,6 +515,10 @@ function initializeBot() {
 
   function saveChatHistory() {
     if (!response) return;
-    sessionStorage.setItem('tempChatHistory', JSON.stringify(response));
+    const chatHistory = {
+      history: response,
+      timestamp: new Date(),
+    };
+    localStorage.setItem('tempChatHistory', JSON.stringify(chatHistory));
   }
 }
